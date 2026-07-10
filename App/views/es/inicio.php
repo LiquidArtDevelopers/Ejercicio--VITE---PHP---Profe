@@ -11,72 +11,46 @@
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
   <body>
-
     <?php require app_path('includes/nav.php'); ?>
 
-    <header class="header01">
-      <img class="header01__media" src="<?= asset('assets/img/panes.avif') ?>" alt="Panes artesanos">
-      <div class="header01__content">
-        <p class="header01__eyebrow">Panadería artesana</p>
-        <h1>Página de inicio</h1>
-        <p class="header01__text">Panes, bollería y pastelería elaborados cada día.</p>
-        <a href="<?= route_url('/productos') ?>" class="boton">Ver productos</a>
+    <header class="header02">
+      <img class="header02__media" src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
+      <div class="header02__content">
+        <p class="header02__eyebrow">Header 02</p>
+        <h1 class="header02__title">Header 02</h1>
+        <p class="header02__text">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem et realitatem.</p>
+        <a href="#inicio-recursos" class="boton">Continuar</a>
       </div>
     </header>
 
     <main>
+      <section id="inicio-recursos">
+        <h2>Artículos 14 y 16</h2>
 
-      <!-- Sección de quienes somos -->
-      <section>
-        <h2>Quienes somos</h2>
-        <!-- artículo de nuestra panadería -->
         <!-- Art14 -->
         <article class="art14">
           <div class="content">
-            <h3>Conoce nuestra panadería</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eaque quos recusandae amet nihil numquam nam, ipsa quo eveniet id veniam! Itaque nulla deserunt fuga nemo temporibus minus obcaecati reiciendis similique esse ipsum quasi, non quisquam neque veritatis ratione suscipit, quo assumenda iste odio dignissimos eligendi. Ipsam inventore quam in.</p>
-            <img src="https://dummyimage.com/1200x500" alt="">
+            <h3>Artículo 14</h3>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Agent Smith recusandae Zion, dum machinae architecto mundum regunt et Trinity viam demonstrat.</p>
+            <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
           </div>
         </article>
 
-        <!-- artículo de nuestra gente -->
         <!-- Art16 -->
         <article class="art16">
-
           <div>
-            <h3>Profesionales a tu servicio</h3>
-
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sit modi velit dolores culpa quaerat assumenda perspiciatis harum dolorum, blanditiis soluta reiciendis tempore eum veniam recusandae in porro iusto! Atque assumenda quasi debitis impedit nesciunt ipsum? Culpa magni a sapiente incidunt eum mollitia nostrum quod, ipsa in. Esse ut rerum eaque quo quidem sunt beatae nihil velit quasi nemo quaerat natus sint officia debitis architecto amet, quod provident! Temporibus facere rem consectetur velit numquam cumque magnam distinctio voluptates eos eum accusamus iste quaerat consequatur quibusdam, reprehenderit quos corporis laboriosam praesentium quia! Perferendis molestias, doloribus magni totam ex aperiam delectus magnam?</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat commodi atque quam quaerat natus ipsa architecto hic voluptatibus totam. Quos?</p>
-
+            <h3>Artículo 16 · Variante 01</h3>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Trinity navigat per lineas codicis dum machinae architecto mundum regunt.</p>
+            <p>Agent Smith recusandae libertatem, sed Zion veritatem defendit.</p>
             <a href="#" class="boton">CTA</a>
           </div>
-
           <div>
-            <img src="https://dummyimage.com/1200x1200" alt="">
+            <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
           </div>
         </article>
-
       </section>
-
-
-      <!-- sección de productos o servicios -->
-      <section>
-        <h2>Nuestros productos</h2>
-
-      </section>
-
-      <!-- sección de contacto -->
-      <section>
-        <h2>Contacta con nosotr@s</h2>
-        
-      </section>
-
-      
     </main>
 
     <?php require app_path('includes/footer.php'); ?>
-
-</body>
+  </body>
 </html>

@@ -7,7 +7,6 @@
     <title>Showroom de resources</title>
     <meta name="description" content="Showroom interno con todos los resources y componentes del stack.">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
@@ -184,20 +183,20 @@
                   <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
                   <a href="./productos-panaderia.php" class="moduloBoton02">
                       <span>Módulo Botón 02</span>
-                      <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="Lorem ipsum dolor sit amet" title="Lorem ipsum">
+                      <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="Matrix ipsum" title="Matrix ipsum">
                   </a>
               </div>
 
               <div class="imagenes">
-                  <a href="<?= route_url('/productos') ?>" title="Lorem ipsum dolor sit amet">
+                  <a href="<?= route_url('/productos') ?>" title="Matrix ipsum">
                       <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix" title="Matrix ipsum">
                       <h4>Matrix ipsum 01</h4>
                   </a>
-                  <a href="<?= route_url('/productos') ?>" title="Lorem ipsum dolor sit amet">
+                  <a href="<?= route_url('/productos') ?>" title="Matrix ipsum">
                       <img src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix" title="Matrix ipsum">
                       <h4>Matrix ipsum 02</h4>
                   </a>
-                  <a href="<?= route_url('/productos') ?>" title="Lorem ipsum dolor sit amet">
+                  <a href="<?= route_url('/productos') ?>" title="Matrix ipsum">
                       <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix" title="Matrix ipsum">
                       <h4>Matrix ipsum 03</h4>
                   </a>
@@ -255,8 +254,8 @@
           <!-- artículo 05 -->
           <article class="art05">
               <h3>Artículo 05</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis porro libero doloribus necessitatibus explicabo nostrum, itaque excepturi reprehenderit magni alias.</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et qui laboriosam voluptas, maxime possimus ab dolor aliquam nobis repellendus voluptatem vero sed explicabo totam quaerat dolores veritatis fuga quibusdam cumque.</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
               <a href="" class="boton">CTA</a>
           </article>
 
@@ -264,7 +263,7 @@
           <article class="art06">
               <div>
                   <h3>Artículo 06</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolorem soluta molestiae autem ipsam deleniti adipisci. Eius adipisci quo, quae officia quod rerum sequi, aliquid autem perspiciatis deleniti, laudantium nihil.</p>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis, Zion libertatem defendit dum machinae mundum regunt.</p>
                   <a href="#" title="" class="boton">CTA</a>
               </div>     
           </article>
@@ -289,9 +288,9 @@
               alt="" 
               title="">
 
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum voluptatum natus ea veritatis harum qui eaque atque exercitationem laudantium? Inventore illum explicabo vero error laborum beatae atque eligendi fugit possimus repudiandae, dolor cupiditate itaque tempore! Et maxime, laboriosam consectetur, similique sunt corporis eum eveniet officia rerum ducimus molestias dolorum libero.</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
 
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur necessitatibus optio inventore esse ipsum ad eveniet sequi iusto distinctio enim assumenda nostrum explicabo facere quo numquam, quod eius hic.</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis et Zion libertatem defendit.</p>
 
               <a href="" class="boton">CTA</a>
 
@@ -299,9 +298,9 @@
 
           <!-- articulo 08 -->
           <article class="art08">
-              <h3>Articulo 08</h3>
+              <h3>Artículo 08</h3>
               <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas pariatur necessitatibus optio inventore esse ipsum ad eveniet sequi iusto distinctio.</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
               <a href="#" class="boton">CTA</a>
           </article>
 
@@ -313,53 +312,53 @@
               <div class="art09-content">
 
                   <div class="contenedor-lista">
-                  <h4>Atención personalizada</h4>
+                  <h4>Matrix ipsum columna 01</h4>
                   <ul>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: pillula rubra.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: codex revelatus.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: Zion vigilat.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: Neo eligendi.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: machinae quaerunt.</span>
                       </li>
                   </ul>
                   </div>
 
                   <div class="contenedor-lista">
-                  <h4>Los mejores ingredientes</h4>
+                  <h4>Matrix ipsum columna 02</h4>
                   <ul>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: simulacrum cadit.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: Morpheus respondet.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: Trinity navigat.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: Agent Smith advenit.</span>
                       </li>
                       <li>
                       <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
-                      <span>Lorem ipsum dolor sit amet.</span>
+                      <span>Matrix ipsum: realitas aperitur.</span>
                       </li>
                   </ul>
                   </div>
@@ -371,52 +370,52 @@
           <!-- Artículo 10-->
           <article class="art10">
               <h3>Artículo 10</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsum libero saepe voluptatem unde sequi quas corporis quibusdam debitis odit ea, asperiores facere ullam ab dolores perspiciatis sapiente aliquid officia nisi corrupti voluptatibus provident laboriosam similique deleniti. Consequuntur, explicabo id amet corrupti at reiciendis, ullam eaque asperiores est officiis sint?</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
               <div class="matrix-items">
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/home-solid.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 01</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/garages.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 02</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy03.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/furniture.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 03</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Pillula rubra aperiam systema.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/paint-tool.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 04</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/tools-power-drill-sharp.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 05</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Zion libertatem defendit.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/stairs-arch.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 06</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Machinae mundum regunt.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy03.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/business.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 07</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Simulacrum veritatem celat.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/house-check-fill.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 08</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Codex realitatem mutat.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
-                      <h4 class="sub-header">Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt totam excepturi officia ipsam aut illo recusandae placeat, neque ut inventore.</p>
+                      <img src="<?= asset('assets/icons/thumbs-up-outline.svg') ?>" alt="" title="">
+                      <h4 class="sub-header">Matrix ipsum 09</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo systema transcendit.</p>
                   </div>
               </div>
           </article>
@@ -461,41 +460,41 @@
           <!-- Artículo 12 -->
           <article class="art12">
               <h3>Artículo 12</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusamus tenetur et fuga illum corporis doloribus. Illum, autem distinctio sed consectetur illo placeat nobis esse perferendis molestiae, explicabo voluptates quod ducimus tenetur voluptatum? Minus illo eveniet aliquam exercitationem libero repellat aliquid</p>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
               <div>
                   <div class="ficha">
                   <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix" title="">
                   <div>
-                      <h4>Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, iure!</p>
-                      <p>Lorem, ipsum.</p>
+                      <h4>Matrix ipsum 01</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p>Neo veritatem eligit.</p>
                   </div>
                   </div>
 
                   <div class="ficha">
                   <img src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix" title="">
                   <div>
-                      <h4>Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, iure! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, aliquid?</p>
-                      <p>Lorem, ipsum.</p>
+                      <h4>Matrix ipsum 02</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem.</p>
+                      <p>Pillula rubra aperit.</p>
                   </div>
                   </div>
 
                   <div class="ficha">
                   <img src="<?= asset('assets/img/test/dummy03.avif') ?>" alt="Escena de Matrix" title="">
                   <div>
-                      <h4>Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, iure!</p>
-                      <p>Lorem, ipsum.</p>
+                      <h4>Matrix ipsum 03</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p>Zion libertatem defendit.</p>
                   </div>
                   </div>
 
                   <div class="ficha">
                   <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix" title="">
                   <div>
-                      <h4>Encabezado h4</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                      <p>Lorem, ipsum.</p>
+                      <h4>Matrix ipsum 04</h4>
+                      <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p>Systema simulacrum celat.</p>
                   </div>
                   </div>
               </div>
@@ -518,9 +517,9 @@
                   src="<?= asset('assets/img/test/dummy_1200.avif') ?>"          
               >
               <div>
-                  <h3>Artículo 13</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe et harum exercitationem nihil quam repellat itaque maiores inventore, nulla earum cumque, optio quibusdam repudiandae nesciunt aliquam? Nisi nam asperiores optio omnis eaque blanditiis totam iusto, magnam enim tenetur soluta quo nemo? Libero voluptatum ullam labore doloribus eius veritatis corrupti in.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ullam quam delectus error quis nihil fugiat cupiditate officiis esse, dicta praesentium illo ducimus. Dolorum adipisci, nesciunt expedita non officia ratione, saepe soluta nihil eius odit neque eaque vitae illo deserunt.</p>
+                  <h3>Artículo 13 · Variante 01</h3>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis et Zion libertatem defendit.</p>
                   <a href="#" class="boton">CTA</a>
               </div>
           </article>
@@ -541,9 +540,9 @@
                   src="<?= asset('assets/img/test/dummy_1200.avif') ?>"          
               >
               <div>
-                  <h3>Articulo 13 invertido (class upsidedown)</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe et harum exercitationem nihil quam repellat itaque maiores inventore, nulla earum cumque, optio quibusdam repudiandae nesciunt aliquam? Nisi nam asperiores optio omnis eaque blanditiis totam iusto, magnam enim tenetur soluta quo nemo? Libero voluptatum ullam labore doloribus eius veritatis corrupti in.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ullam quam delectus error quis nihil fugiat cupiditate officiis esse, dicta praesentium illo ducimus. Dolorum adipisci, nesciunt expedita non officia ratione, saepe soluta nihil eius odit neque eaque vitae illo deserunt.</p>
+                  <h3>Artículo 13 · Variante invertida</h3>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
                   <a href="#" class="boton">CTA</a>
               </div>
           </article>
@@ -564,61 +563,66 @@
                   src="<?= asset('assets/img/test/dummy_1200.avif') ?>"          
               >
               <div>
-                  <h3>Artículo 13</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe et harum exercitationem nihil quam repellat itaque maiores inventore, nulla earum cumque, optio quibusdam repudiandae nesciunt aliquam? Nisi nam asperiores optio omnis eaque blanditiis totam iusto, magnam enim tenetur soluta quo nemo? Libero voluptatum ullam labore doloribus eius veritatis corrupti in.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ullam quam delectus error quis nihil fugiat cupiditate officiis esse, dicta praesentium illo ducimus. Dolorum adipisci, nesciunt expedita non officia ratione, saepe soluta nihil eius odit neque eaque vitae illo deserunt.</p>
+                  <h3>Artículo 13 · Variante 03</h3>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Zion libertatem defendit dum machinae mundum regunt.</p>
+                  <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis et systema simulacrum celat.</p>
                   <a href="#" class="boton">CTA</a>
               </div>
           </article>
         
 
           <!-- artForm -->
-          <article class="artForm">
-              <h3>Artículo Formulario</h3>
+          <article class="artForm" id="artForm">
+              <h3>artForm</h3>
 
+              <?php
+              $artFormEnviado = ($_GET['form'] ?? '') === 'artForm' && ($_GET['envio'] ?? '') === 'ok';
+              ?>
+
+              <?php if (!$artFormEnviado): ?>
               <!-- Al abrir este otro archivo, genero otro scope, se reseta y limpia la memoria en el servidor -->
               <form action="/app/artForm" method="post">
 
                   <?php
-                  if( isset($_GET['campo']) ){
+                  if(($_GET['form'] ?? '') === 'artForm' && isset($_GET['campo'])){
                       // si entro es que viene un error marcado en la url con query string
-                      $campo = $_GET['campo'];
-                      $error = $_GET['error'];
-                      $nombre = $_GET['nombre'];
-                      $tel = $_GET['tel'];
-                      $email = $_GET['email'];
-                      $mensaje = $_GET['mensaje'];
+                      $artFormCampo = $_GET['campo'];
+                      $artFormError = $_GET['error'] ?? '';
+                      $artFormNombre = $_GET['nombre'] ?? '';
+                      $artFormTel = $_GET['tel'] ?? '';
+                      $artFormEmail = $_GET['email'] ?? '';
+                      $artFormMensaje = $_GET['mensaje'] ?? '';
                       // echo "<p class='error'>Hay un error en el campo $campo de tipo $error</p>";
                   }
                   ?>
 
-                  <span class="error"><?php if(isset($campo) && $campo == "nombre"){echo sprintf("Hay un error en el campo %s de tipo %s", $campo, $error);} ?></span>
+                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "nombre"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
                   <label for="nombre">Nombre *</label>
                   <!-- <input type="text" name="nombre" id="nombre" placeholder="* Escribe tu nombre" minlength="3" maxlength="40" required > -->
-                  <input type="text" class='<?php if(isset($campo) && $campo == "nombre"){ echo "inputError";} ?>' name="nombre" id="nombre" placeholder="* Escribe tu nombre" value="<?php if(isset($nombre)){echo $nombre;}?>">
+                  <input type="text" class='<?php if(isset($artFormCampo) && $artFormCampo == "nombre"){ echo "inputError";} ?>' name="nombre" id="nombre" placeholder="* Escribe tu nombre" value="<?= e($artFormNombre ?? '') ?>">
 
-                  <span class="error"><?php if( isset($campo) && $campo == "telefono"){echo sprintf("Hay un error en el campo %s de tipo %s", $campo, $error);} ?></span>
+                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "telefono"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
                   <label for="tel">Teléfono</label>
-                  <input type="tel" class='<?php if(isset($campo) && $campo == "telefono"){ echo "inputError";} ?>' name="tel" id="tel" placeholder="Aquí tu teléfono" value="<?php if(isset($tel)){echo $tel;}?>">
+                  <input type="tel" class='<?php if(isset($artFormCampo) && $artFormCampo == "telefono"){ echo "inputError";} ?>' name="tel" id="tel" placeholder="Aquí tu teléfono" value="<?= e($artFormTel ?? '') ?>">
 
 
-                  <span class="error"><?php if( isset($campo) && $campo == "email"){echo sprintf("Hay un error en el campo %s de tipo %s", $campo, $error);} ?></span>
+                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "email"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
                   <label for="email">Email *</label>
-                  <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Correo electrónico" value="<?php if(isset($email)){echo $email;}?>">
+                  <input type="email" class='<?php if(isset($artFormCampo) && $artFormCampo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Correo electrónico" value="<?= e($artFormEmail ?? '') ?>">
 
 
-                  <span class="error"><?php if( isset($campo) && $campo == "mensaje"){echo sprintf("Hay un error en el campo %s de tipo %s", $campo, $error);} ?></span>
+                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "mensaje"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
                   <label for="mensaje">Comentarios</label>
-                  <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aquí tu mensaje"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
+                  <textarea name="mensaje" class='<?php if(isset($artFormCampo) && $artFormCampo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aquí tu mensaje"><?= e($artFormMensaje ?? '') ?></textarea>
 
-                  <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
+                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
                   <div>
                       <input type="checkbox" name="terminos" id="aceptarTerminos">
                       <label for="aceptarTerminos">Aceptar <a href="<?= route_url('/legal') ?>#politica-privacidad">términos y condiciones de privacidad</a></label>
                   </div>
 
                   <!-- CAPTCHA -->
-                  <span class="error"><?php if(isset($campo) && $campo == "captcha"){echo "No has resuelto correctamente el Captcha";} ?></span>
+                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "captcha"){echo "No has resuelto correctamente el Captcha";} ?></span>
                   <div>
                       <label for="respUser">Resuelve:</label>
 
@@ -635,9 +639,9 @@
                   </div>
 
                   <!-- input oculto donde el value es el valor de $lang, ergo el idioma -->
-                  <input type="text" name="inputIdioma" value="<?= $lang?>" style="display:none;">
+                  <input type="text" name="inputIdioma" value="<?= e($lang) ?>" style="display:none;">
                   <!-- otro input oculto -->
-                  <input type="text" name="inputUrl" value="<?= $url?>" style="display:none;">
+                  <input type="text" name="inputUrl" value="<?= e($url) ?>" style="display:none;">
 
 
                   <input type="submit" value="ENVIAR" class="boton">
@@ -645,6 +649,9 @@
                   <p>* Campos obligatorios</p>
 
               </form>
+              <?php else: ?>
+                  <p>Gracias, hemos recibido tu consulta <?= e($_GET['nombre'] ?? '') ?>.</p>
+              <?php endif; ?>
 
           </article>
 
@@ -659,49 +666,51 @@
               // Depende del error, lo mostraremos encima del input donde está el error
               // Como recogemos los value de los input que el user mandó al backend, volvemos a rellenar los values de los input con esos valores, para que se respete el UX
 
-              if(isset($_GET['error'])){
-                  $error = $_GET['error'];
-                  $campo = $_GET['campo'];
-                  $nombre = $_GET['nombre'];
-                  $telefono = $_GET['tel'];
-                  $email = $_GET['email'];
-                  $mensaje = $_GET['mensaje'];
+              $artForm01Enviado = ($_GET['form'] ?? '') === 'artForm01' && ($_GET['envio'] ?? '') === 'ok';
+
+              if(($_GET['form'] ?? '') === 'artForm01' && isset($_GET['error'])){
+                  $artForm01Error = $_GET['error'];
+                  $artForm01Campo = $_GET['campo'] ?? '';
+                  $artForm01Nombre = $_GET['nombre'] ?? '';
+                  $artForm01Telefono = $_GET['tel'] ?? '';
+                  $artForm01Email = $_GET['email'] ?? '';
+                  $artForm01Mensaje = $_GET['mensaje'] ?? '';
               }
 
               ?>
 
-              <h3>Artículo Formulario 01</h3>
+              <h3>artForm01</h3>
               <div>
                   <div class="contenedor-form">
                   <img src="<?= asset('assets/icons/mail.svg') ?>" alt="">
                   <?php
-                  if(!isset($_GET['envio'])){              
+                  if(!$artForm01Enviado){
                   ?>
                   <form action="/app/artForm01" method="post" id="idForm">
 
                       <?php
-                      if(isset($error)){   
+                      if(isset($artForm01Error)){
                       ?>
-                      <p class="error">Hay un error en el campo <?=$campo?> de tipo <?= $error?></p>
+                      <p class="error">Hay un error en el campo <?= e($artForm01Campo) ?> de tipo <?= e($artForm01Error) ?></p>
                       <?php
                       }
                       ?>
 
                       <!-- nombre -->
                       <label for="nombre">Nombre *</label>
-                      <input type="text" id="nombre" name="nombre" placeholder="Escribe aquí tu nombre *" value="<?php if(isset($error)){echo $nombre;}?>">
+                      <input type="text" id="nombre" name="nombre" placeholder="Escribe aquí tu nombre *" value="<?= e($artForm01Nombre ?? '') ?>">
 
                       <!-- teléfono -->
                       <label for="telefono">Teléfono *</label>
-                      <input type="tel" id="telefono" name="telefono" placeholder="Escribe aquí tu teléfono *" value="<?php if(isset($error)){echo $telefono;}?>">
+                      <input type="tel" id="telefono" name="telefono" placeholder="Escribe aquí tu teléfono *" value="<?= e($artForm01Telefono ?? '') ?>">
 
                       <!-- Correo -->
                       <label for="email">Correo Electrónico</label>
-                      <input type="email" id="email" name="email" placeholder="Escribe aquí tu correo electrónico" value="<?php if(isset($error)){echo $email;}?>">
+                      <input type="email" id="email" name="email" placeholder="Escribe aquí tu correo electrónico" value="<?= e($artForm01Email ?? '') ?>">
 
                       <!-- Mensaje -->
                       <label for="mensaje">Escribe tu mensaje</label>
-                      <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí tu mensaje"><?php if(isset($error)){echo $mensaje;}?></textarea>
+                      <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí tu mensaje"><?= e($artForm01Mensaje ?? '') ?></textarea>
 
                       <!-- términos -->
                       <div class="horizontal">
@@ -720,16 +729,15 @@
                       <input type="hidden" name="respSystem" id="respSystemForm01" value="">
                       </div>                    
 
-                      <input type="hidden" name="url" value="<?= $url ?>">
-                      <input type="hidden" name="lang" value="<?= $lang ?>">
+                      <input type="hidden" name="url" value="<?= e($url) ?>">
+                      <input type="hidden" name="lang" value="<?= e($lang) ?>">
 
                       <input type="submit" class="boton" value="Enviar">
                   </form>
                   <?php
                   }else{
-                      $nombre=$_GET['nombre'];
                   ?>
-                  <h3>Gracias, hemos recibido tu consulta <?= $nombre ?></h3>
+                  <h3>Gracias, hemos recibido tu consulta <?= e($_GET['nombre'] ?? '') ?></h3>
                   <?php
                   }
                   ?>
@@ -770,7 +778,7 @@
           <!-- artForm02 ajax -->
           <article class="artForm02">          
 
-              <h3>Artículo Formulario 02</h3>
+              <h3>artForm02</h3>
               <div>
                   <div class="contenedor-form">
                   
@@ -780,12 +788,12 @@
                   <!-- MODAL QUE SALE CUANDO SE ENVÍA EL FORM CON ÉXITO -->
                   <div id="modal_envio">
                       <!-- nuestro modal con html y css -->
-                      <h3 id="h3_modal_envio">Lorem ipsum dolor sit amet.</h3>
-                      <p id="p_modal_envio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quia porro obcaecati accusamus laborum fuga totam assumenda fugiat sint pariatur!</p>
+                      <h3 id="h3_modal_envio">Matrix ipsum modal</h3>
+                      <p id="p_modal_envio">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
                       <div class="boton" id="boton_modal_envio">Escribir otra consulta</div>
                   </div>
 
-                  <form id="idForAjax">
+                  <form id="idForAjax" action="/app/artForm02" method="post">
                       
                       <p class="error" id="errorForm02"></p>
 
@@ -822,8 +830,8 @@
                       <input type="hidden" name="respSystem" id="respSystemajax" value="">
                       </div>
 
-                      <input type="hidden" name="url" value="<?= $url ?>">
-                      <input type="hidden" name="lang" value="<?= $lang ?>">
+                      <input type="hidden" name="url" value="<?= e($url) ?>">
+                      <input type="hidden" name="lang" value="<?= e($lang) ?>">
 
                       <input type="submit" class="boton" value="Enviar" id="botonEnviarAjax">
                   </form>
@@ -927,13 +935,13 @@
 
       
       <section id="section2">
-        <h2>Encabezado h2</h2>
+        <h2>Artículos 14 y 15</h2>
 
         <!-- Art14 -->
         <article class="art14">
           <div class="content">
-            <h3>Encabezado h3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eaque quos recusandae amet nihil numquam nam, ipsa quo eveniet id veniam! Itaque nulla deserunt fuga nemo temporibus minus obcaecati reiciendis similique esse ipsum quasi, non quisquam neque veritatis ratione suscipit, quo assumenda iste odio dignissimos eligendi. Ipsam inventore quam in.</p>
+            <h3>Artículo 14</h3>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Agent Smith recusandae Zion, dum machinae architecto mundum regunt et Trinity viam demonstrat.</p>
             <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
           </div>
         </article>
@@ -942,27 +950,27 @@
         <article class="art15">
           
           <div>
-            <h3>Nuestro Productos</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quae dolores nesciunt veritatis atque asperiores!</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis tempora adipisci consequatur! Beatae laboriosam esse numquam voluptas, vitae nihil amet consequatur quaerat, iusto necessitatibus expedita quis eaque nesciunt culpa officiis fugit iste exercitationem. Aspernatur consectetur ducimus voluptate! Tempore, deleniti odit ea perferendis voluptates magnam quas facilis nulla officiis iste vero?</p>
+            <h3>Artículo 15</h3>
+            <p>Matrix ipsum dolor sit amet. Neo eligendi veritatis codicem et simulacrum.</p>
+            <p>Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Agent Smith custodit Matrix, sed Trinity et Neo per codicem navigant. Zion resistit machinis dum oraculum responsum revelat.</p>
           </div>
 
           <div>
             <a href="" class="item">
-              <h4>Encabezado h4</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aliquam, quibusdam molestiae at repudiandae et?</p>
+              <h4>Matrix ipsum 01</h4>
+              <p>Neo eligendi veritatis codicem, dum pillula rubra realitatem aperit.</p>
               <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix" width="700" height="700">              
             </a>
 
             <a href="" class="item">
-              <h4>Servicio de posicionamiento SEO</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aliquam, quibusdam molestiae at repudiandae et?</p>
+              <h4>Matrix ipsum 02</h4>
+              <p>Morpheus quaerat optionem et Trinity per simulacrum navigat.</p>
               <img src="<?= asset('assets/img/test/dummy03.avif') ?>" alt="Escena de Matrix">
             </a>
             
             <a href="" class="item">
-              <h4>Encabezado h4</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aliquam, quibusdam molestiae at repudiandae et?</p>
+              <h4>Matrix ipsum 03</h4>
+              <p>Agent Smith codicem custodit, sed Zion machinis resistit.</p>
               <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix">
             </a>
           </div>
@@ -971,23 +979,23 @@
           <div class="modulePersonal01">
             <div>
               <img src="<?= asset('assets/icons/truck.svg') ?>" alt="">
-              <h4>Encabezado h4 Item 1</h4>
+              <h4>modulePersonal01 · Item 01</h4>
             </div>
             <div>
               <img src="<?= asset('assets/icons/tools.svg') ?>" alt="">
-              <h4>Encabezado h4  Item 2</h4>
+              <h4>modulePersonal01 · Item 02</h4>
             </div>
             <div>
               <img src="<?= asset('assets/icons/clip.svg') ?>" alt="">
-              <h4>Encabezado h4  Item 3</h4>
+              <h4>modulePersonal01 · Item 03</h4>
             </div>
             <div>
               <img src="<?= asset('assets/icons/bag.svg') ?>" alt="">
-              <h4>Encabezado h4  Item 4</h4>
+              <h4>modulePersonal01 · Item 04</h4>
             </div>
             <div>
               <img src="<?= asset('assets/icons/money.svg') ?>" alt="">
-              <h4>Encabezado h4  Item 5</h4>
+              <h4>modulePersonal01 · Item 05</h4>
             </div>
           </div>
 
@@ -997,41 +1005,41 @@
         <article class="artAcordeon01">
           <div class="cabecera">
             <div>
-              <h3>Encabezado h3 artAcordeon01 - FAQ</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi laudantium fugit excepturi nostrum, iusto voluptates numquam debitis quaerat maxime temporibus asperiores in.</p>
-              <p>At dolor iusto, fugiat debitis soluta, mollitia eveniet consectetur eaque doloribus dicta saepe repellendus alias pariatur? Eaque corrupti necessitatibus error unde inventore quae possimus saepe molestiae esse optio sint deserunt labore, excepturi placeat quas expedita voluptate animi explicabo cupiditate itaque, ex officiis commodi qui quis. </p>
+              <h3>artAcordeon01</h3>
+              <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
+              <p>Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Trinity navigat dum Agent Smith codicem custodit.</p>
             </div>
             <img src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
           </div>
           <div class="contenedor">
             <div class="ficha">
-              <h4>Encabezado h4 - pregunta</h4>
-              <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae soluta consectetur voluptatum corrupti quos magni, in rem ipsam dolorem! Voluptas reprehenderit animi facere nam dignissimos hic sint blanditiis labore illo</p>
+              <h4>Matrix quaestio 01</h4>
+              <p class="respuesta">Matrix ipsum dolor sit amet. Neo eligendi pillulam rubram et veritatem post codicem invenit.</p>
               <span class="mostrar boton">Mostrar más</span>
             </div>
             <div class="ficha">
-              <h4>Encabezado h4 - pregunta</h4>
-              <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae soluta consectetur voluptatum corrupti quos magni, in rem ipsam dolorem! Voluptas reprehenderit animi facere nam dignissimos hic sint blanditiis labore illo, beatae dolorem tenetur repellat veniam quasi commodi aut porro quisquam sequi ut minus natus pariatur mollitia! Consequatur illum rem debitis dolor quos ex impedit aut? Earum, temporibus! Suscipit delectus sequi, quibusdam sed aut, iure asperiores perspiciatis accusamus assumenda accusantium distinctio neque quisquam esse id soluta, libero amet mollitia dolores.</p>
+              <h4>Matrix quaestio 02</h4>
+              <p class="respuesta">Morpheus quaerat optionem et simulacrum aperit. Machinae codicem regunt, sed Zion resistit.</p>
               <span class="mostrar boton">Mostrar más</span>
             </div>
             <div class="ficha">
-              <h4>Encabezado h4 - pregunta</h4>
-              <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae soluta consectetur voluptatum corrupti quos magni, in rem ipsam dolorem! Voluptas reprehenderit animi facere nam dignissimos hic sint blanditiis labore illo, beatae dolorem tenetur repellat veniam quasi commodi aut porro quisquam sequi ut minus natus pariatur mollitia! Consequatur illum rem debitis dolor quos ex impedit aut? Earum, temporibus! Suscipit delectus sequi, quibusdam sed aut, iure asperiores perspiciatis accusamus assumenda accusantium distinctio neque quisquam esse id soluta, libero amet mollitia dolores.</p>
+              <h4>Matrix quaestio 03</h4>
+              <p class="respuesta">Trinity per systema navigat, dum Neo leges simulacri mutare discit.</p>
               <span class="mostrar boton">Mostrar más</span>
             </div>
             <div class="ficha">
-              <h4>Encabezado h4 - pregunta</h4>
-              <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae soluta consectetur voluptatum corrupti quos magni, in rem ipsam dolorem! Voluptas reprehenderit animi facere nam dignissimos hic sint blanditiis labore illo, beatae dolorem tenetur repellat veniam quasi commodi aut porro quisquam sequi ut minus natus pariatur mollitia! Consequatur illum rem debitis dolor quos ex impedit aut? Earum, temporibus! Suscipit delectus sequi, quibusdam sed aut, iure asperiores perspiciatis accusamus assumenda accusantium distinctio neque quisquam esse id soluta, libero amet mollitia dolores.</p>
+              <h4>Matrix quaestio 04</h4>
+              <p class="respuesta">Agent Smith recusandae libertatem et multiplicat se intra Matrix.</p>
               <span class="mostrar boton">Mostrar más</span>
             </div>
             <div class="ficha">
-              <h4>Encabezado h4 - pregunta</h4>
-              <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae soluta consectetur voluptatum corrupti quos magni, in rem ipsam dolorem! Voluptas reprehenderit animi facere nam dignissimos hic sint blanditiis labore illo, beatae dolorem tenetur repellat veniam quasi commodi aut porro quisquam sequi ut minus natus pariatur mollitia! Consequatur illum rem debitis dolor quos ex impedit aut? Earum, temporibus! Suscipit delectus sequi, quibusdam sed aut, iure asperiores perspiciatis accusamus assumenda accusantium distinctio neque quisquam esse id soluta, libero amet mollitia dolores.</p>
+              <h4>Matrix quaestio 05</h4>
+              <p class="respuesta">Oraculum responsum non imponit; electio viam ante Neo revelat.</p>
               <span class="mostrar boton">Mostrar más</span>
             </div>
             <div class="ficha">
-              <h4>Encabezado h4 - pregunta</h4>
-              <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet repudiandae soluta consectetur voluptatum corrupti quos magni, in rem ipsam dolorem! Voluptas reprehenderit animi facere nam dignissimos hic sint blanditiis labore illo, beatae dolorem tenetur repellat veniam quasi commodi aut porro quisquam sequi ut minus natus pariatur mollitia! Consequatur illum rem debitis dolor quos ex impedit aut? Earum, temporibus! Suscipit delectus sequi, quibusdam sed aut, iure asperiores perspiciatis accusamus assumenda accusantium distinctio neque quisquam esse id soluta, libero amet mollitia dolores.</p>
+              <h4>Matrix quaestio 06</h4>
+              <p class="respuesta">Zion vigilat et homines contra machinas ultimam realitatem defendunt.</p>
               <span class="mostrar boton">Mostrar más</span>
             </div>
           </div>
@@ -1040,17 +1048,17 @@
       </section>
 
       <section id="section3">
-        <h2>Servicios</h2>
+        <h2>Artículo 16</h2>
 
         <!-- Art16 -->
         <article class="art16">
 
           <div>
-            <h3>Servicio 1</h3>
+            <h3>Artículo 16 · Variante 01</h3>
 
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sit modi velit dolores culpa quaerat assumenda perspiciatis harum dolorum, blanditiis soluta reiciendis tempore eum veniam recusandae in porro iusto! Atque assumenda quasi debitis impedit nesciunt ipsum? Culpa magni a sapiente incidunt eum mollitia nostrum quod, ipsa in. Esse ut rerum eaque quo quidem sunt beatae nihil velit quasi nemo quaerat natus sint officia debitis architecto amet, quod provident! Temporibus facere rem consectetur velit numquam cumque magnam distinctio voluptates eos eum accusamus iste quaerat consequatur quibusdam, reprehenderit quos corporis laboriosam praesentium quia! Perferendis molestias, doloribus magni totam ex aperiam delectus magnam?</p>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Trinity navigat per lineas codicis dum machinae architecto mundum regunt.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat commodi atque quam quaerat natus ipsa architecto hic voluptatibus totam. Quos?</p>
+            <p>Agent Smith recusandae libertatem, sed Zion veritatem defendit.</p>
 
             <a href="#" class="boton">CTA</a>
           </div>
@@ -1064,11 +1072,11 @@
         <article class="art16 invert">
 
           <div>
-            <h3>Servicio 2</h3>
+            <h3>Artículo 16 · Variante invertida</h3>
 
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sit modi velit dolores culpa quaerat assumenda perspiciatis harum dolorum, blanditiis soluta reiciendis tempore eum veniam recusandae in porro iusto! Atque assumenda quasi debitis impedit nesciunt ipsum? Culpa magni a sapiente incidunt eum mollitia nostrum quod, ipsa in. Esse ut rerum eaque quo quidem sunt beatae nihil velit quasi nemo quaerat natus sint officia debitis architecto amet, quod provident! Temporibus facere rem consectetur velit numquam cumque magnam distinctio voluptates eos eum accusamus iste quaerat consequatur quibusdam, reprehenderit quos corporis laboriosam praesentium quia! Perferendis molestias, doloribus magni totam ex aperiam delectus magnam?</p>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem et Neo codicem sequitur. Pillula rubra simulacrum frangit, dum Trinity ostium ad realitatem invenit.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat commodi atque quam quaerat natus ipsa architecto hic voluptatibus totam. Quos?</p>
+            <p>Machinae systema custodiunt, sed electio cursum mutat.</p>
 
             <a href="#" class="boton">CTA</a>
           </div>
@@ -1083,11 +1091,11 @@
         <article class="art16">
 
           <div>
-            <h3>servicio 3</h3>
+            <h3>Artículo 16 · Variante 03</h3>
 
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sit modi velit dolores culpa quaerat assumenda perspiciatis harum dolorum, blanditiis soluta reiciendis tempore eum veniam recusandae in porro iusto! Atque assumenda quasi debitis impedit nesciunt ipsum? Culpa magni a sapiente incidunt eum mollitia nostrum quod, ipsa in. Esse ut rerum eaque quo quidem sunt beatae nihil velit quasi nemo quaerat natus sint officia debitis architecto amet, quod provident! Temporibus facere rem consectetur velit numquam cumque magnam distinctio voluptates eos eum accusamus iste quaerat consequatur quibusdam, reprehenderit quos corporis laboriosam praesentium quia! Perferendis molestias, doloribus magni totam ex aperiam delectus magnam?</p>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatem et leges mundi virtualis superat. Oraculum quaestionem relinquit, Morpheus fidem servat et Zion vigilat.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat commodi atque quam quaerat natus ipsa architecto hic voluptatibus totam. Quos?</p>
+            <p>Codex fluit et simulacrum novam viam demonstrat.</p>
 
             <a href="#" class="boton">CTA</a>
           </div>
@@ -1102,11 +1110,11 @@
         <article class="art16 invert">
 
           <div>
-            <h3>servicio 3</h3>
+            <h3>Artículo 16 · Variante invertida 04</h3>
 
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sit modi velit dolores culpa quaerat assumenda perspiciatis harum dolorum, blanditiis soluta reiciendis tempore eum veniam recusandae in porro iusto! Atque assumenda quasi debitis impedit nesciunt ipsum? Culpa magni a sapiente incidunt eum mollitia nostrum quod, ipsa in. Esse ut rerum eaque quo quidem sunt beatae nihil velit quasi nemo quaerat natus sint officia debitis architecto amet, quod provident! Temporibus facere rem consectetur velit numquam cumque magnam distinctio voluptates eos eum accusamus iste quaerat consequatur quibusdam, reprehenderit quos corporis laboriosam praesentium quia! Perferendis molestias, doloribus magni totam ex aperiam delectus magnam?</p>
+            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Trinity codicem legit et Agent Smith intra systema multiplicatur. Neo autem realitatem eligit et machinarum ordinem recusat.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat commodi atque quam quaerat natus ipsa architecto hic voluptatibus totam. Quos?</p>
+            <p>Pillula rubra viam aperit; nulla electio sine consequentia manet.</p>
 
             <a href="#" class="boton">CTA</a>
           </div>
@@ -1120,23 +1128,23 @@
       </section>
             <!-- Slider -->
       <section id="section4">
-        <h2>Carrusel infinito</h2>
+        <h2>artSlider01</h2>
 
         <!-- ArtSlider01 -->
         <article class="artSlider01" aria-label="Carrusel de productos">
             <div class="artSlider01__visor">
                 <div class="artSlider01__pista">
                   <div class="artSlider01__slide">
-                    <h3>Panes artesanos</h3>
+                    <h3>Matrix ipsum 01</h3>
                     <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
                   </div>
                   <div class="artSlider01__slide">
-                    <h3>Donuts</h3>
+                    <h3>Matrix ipsum 02</h3>
                     <img src="<?= asset('assets/img/test/dummy03.avif') ?>" alt="Escena de Matrix">
                   </div>
 
                   <div class="artSlider01__slide">
-                    <h3>Pasteles</h3>
+                    <h3>Matrix ipsum 03</h3>
                     <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix">
                   </div>
                 </div>
@@ -1154,7 +1162,7 @@
       </section>
 
       <section id="section5">
-        <h2 data-lang="encabezado">Encabezado h2</h2>
+        <h2 data-lang="encabezado">artGrid</h2>
 
         <article class="artGrid">
           <div>
@@ -1180,24 +1188,24 @@
         <!-- ModulePersonal01 -->
         <div class="modulePersonal01">
           <div>
-            <h4 data-lang>Encabezado h4 Item 1</h4>
+            <h4 data-lang>modulePersonal01 · Item 01</h4>
             <img src="<?= asset('assets/icons/truck.svg') ?>" alt="">
             
           </div>
           <div>
-            <h4>Encabezado h4 Item 1</h4>
+            <h4>modulePersonal01 · Item 02</h4>
             <img src="<?= asset('assets/icons/tools.svg') ?>" alt="">
           </div>
           <div>
-            <h4>Encabezado h4 Item 1</h4>
+            <h4>modulePersonal01 · Item 03</h4>
             <img src="<?= asset('assets/icons/clip.svg') ?>" alt="">
           </div>
           <div>
-            <h4>Encabezado h4 Item 1</h4>
+            <h4>modulePersonal01 · Item 04</h4>
             <img src="<?= asset('assets/icons/bag.svg') ?>" alt="">
           </div>
           <div>
-            <h4>Encabezado h4 Item 1</h4>
+            <h4>modulePersonal01 · Item 05</h4>
             <img src="<?= asset('assets/icons/money.svg') ?>" alt="">
           </div>
         </div>

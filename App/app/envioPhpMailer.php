@@ -1,47 +1,61 @@
 <?php
 
-// Este código lo tengo que configurar para que haga el envío desde una cuenta de correo oficial del host.
-// Como este proyecto está colgado en el dominio webda.eus, el correo que se use para enviar correos desde esta web, a través del phpMailer, debe ser de ese mismo dominio. Ejemplo: no-reply@webda.eus
-// En este archivo configuraré usuario, el server y la contraseña de ese correo.
-  
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 $basePath = dirname(__DIR__, 2);
-require $basePath . '/vendor/autoload.php'; /* modificar */
-  
-$mail = new PHPMailer(true);
-  
-try {
-    $mail->SMTPDebug = 0;                                       
-    $mail->isSMTP();
-    $mail->Host= $_ENV['HOST']; /* modificar */                
-    $mail->SMTPAuth   = true;                        
-    $mail->Username = $_ENV['USERNAME']; /* modificar */              
-    $mail->Password = $_ENV['PASS']; /* modificar */                       
-    $mail->SMTPSecure = 'ssl';                              
-    $mail->Port = 465;  
-  
-    $mail->setFrom($correoEmisor, $nombreEmisor); //varibles
-    $mail->addAddress($correoDestinatario, $nombreDestinatario); //varibles
-    /* $mail->addCC('info@webda.eus');//copia
-    $mail->addBCC('info@webda.eus');//copia oculta */
-       
-    $mail->isHTML(true);
-    $mail->CharSet = PHPMailer::CHARSET_UTF8;                    
-    $mail->Subject = $asunto; //varibles
-    $mail->Body = $cuerpo; //variables
-    $mail->AddEmbeddedImage($basePath . "/App/app/img/logo.png", 'logo');
-    $mail->AltBody = 'Body in plain text for non-HTML mail clients';
+require_once $basePath . '/vendor/autoload.php';
 
-    if (!$mail->send()) {
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-    } else {
-        //echo $aviso; //SACAMOS AVISO EN LA WEB DEL ENVÍO DEL CORREO
-    }
-    
-} catch (Exception $e) {
-    echo "El mensaje no se ha enviado. Mailer Error: {$mail->ErrorInfo}";
+// Los controladores pueden consultar esta variable despues del include.
+$envioCorreoOk = false;
+
+$smtpHost = env('HOST');
+$smtpUser = env('USERNAME');
+$smtpPass = env('PASS');
+$mailEnabled = filter_var(env('MAIL_ENABLED', 'true'), FILTER_VALIDATE_BOOLEAN);
+
+if (!$mailEnabled) {
+    return;
 }
-  
-?>
+
+// El stack puede arrancar aunque el correo todavia no este configurado.
+if (
+    $smtpHost === null
+    || $smtpUser === null
+    || $smtpPass === null
+    || empty($correoEmisor)
+    || empty($correoDestinatario)
+) {
+    error_log('PHPMailer no se ha ejecutado: faltan datos de correo en .env.');
+    return;
+}
+
+$mail = new PHPMailer(true);
+
+try {
+    $mail->SMTPDebug = 0;
+    $mail->isSMTP();
+    $mail->Host = $smtpHost;
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPass;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+
+    $mail->setFrom($correoEmisor, $nombreEmisor);
+    $mail->addAddress($correoDestinatario, $nombreDestinatario);
+    $mail->isHTML(true);
+    $mail->CharSet = PHPMailer::CHARSET_UTF8;
+    $mail->Subject = $asunto;
+    $mail->Body = $cuerpo;
+    $mail->AltBody = 'Mensaje enviado desde el formulario de la web.';
+
+    $logo = $basePath . '/App/app/img/logo.png';
+    if (is_file($logo)) {
+        $mail->addEmbeddedImage($logo, 'logo');
+    }
+
+    $envioCorreoOk = $mail->send();
+} catch (Throwable $exception) {
+    // Nunca imprimimos aqui: una salida romperia las redirecciones y el JSON AJAX.
+    error_log('PHPMailer: ' . $exception->getMessage());
+}

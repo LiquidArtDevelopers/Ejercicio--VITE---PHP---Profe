@@ -13,15 +13,16 @@ include_once $basePath . "/App/config/helpers.php";
 
 // 1 recibir los datos del formulario a través de POST y meto los value en nuevas variables que usaré aquí
 // Recoger el resto de valores del form
-$nombre = $_POST['nombre'];
-$telefono = $_POST['telefono'];
-$email = $_POST['email'];
-$mensaje = $_POST['mensaje'];
+$nombre = trim((string) ($_POST['nombre'] ?? ''));
+$telefono = trim((string) ($_POST['telefono'] ?? ''));
+$email = trim((string) ($_POST['email'] ?? ''));
+$mensaje = trim((string) ($_POST['mensaje'] ?? ''));
 $ip = $_SERVER['REMOTE_ADDR'];
 $fecha = date('Y-m-d H:i:s');
 
-$url = $_POST['url'];
-$lang = $_POST['lang'];
+$url = ruta_interna($_POST['url'] ?? '/showroom');
+$langRecibido = (string) ($_POST['lang'] ?? 'es');
+$lang = in_array($langRecibido, ['es', 'eu'], true) ? $langRecibido : 'es';
 
 
 
@@ -34,22 +35,11 @@ if(!isset($_POST['terminos']) || comprobarVacio($_POST['terminos'])){
 }
 
 
-// // comprobación de términos
-// if(empty($_POST['terminos'])){
-//     // Como viene vacía, redirijo a la página de contacto
-//     // echo "Hay un error pues no ha aceptado las condiciones de privacidad";
-//     header('location:/index.php?error=condiciones');
-//     die;
-// }else{
-//     $terminos = $_POST['terminos'];
-// }
-
-
 // comprobación de captcha
-$respUser = $_POST['respUser'];
-$respSystem = $_POST['respSystem'];
+$respUser = trim((string) ($_POST['respUser'] ?? ''));
+$respSystem = trim((string) ($_POST['respSystem'] ?? ''));
 // que venga vacío
-if(!isset($respUser)){
+if($respUser === '' || $respSystem === ''){
     enviarRespuestaAsincrona("Debes cumplir con el captcha", true, "captcha");
 }
 // que la respuesta sea errónea
@@ -109,12 +99,12 @@ if(comprobarCaracteres($mensaje, 4, 200)){
 
 // 3.1 enviar un correo al ADMIN DE LA WEB
 // recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
-$web = $_ENV['RUTA'];
-$correoEmisor =$_ENV['EMAIL_WEB'];
-$nombreEmisor ="Patxi Pintor Web";
-$correoDestinatario = $_ENV['EMAIL_ADMIN'];
-$nombreDestinatario= "Patxi";
-$asunto = "Nueva consulta en la web de Patxi: $nombre";
+$web = app_url($url);
+$correoEmisor = env('EMAIL_WEB', '');
+$nombreEmisor = "Web de ejemplo";
+$correoDestinatario = env('EMAIL_ADMIN', '');
+$nombreDestinatario = "Administración";
+$asunto = "Nueva consulta desde la web de ejemplo: $nombre";
 
 // recoger el template con los placeholders
 $html = file_get_contents($basePath . "/App/app/templates/artForm02.html");
@@ -125,10 +115,10 @@ $vars = [
     '{web}'                 => $web,
     '{url}'                 => $url,
     '{asunto}'              => $asunto,
-    '{aviso}'               => "Has recibido una consulta de $nombre desde la web de Patxi. Ha aceptado los términos de privacidad.",
-    '{explicacion}'         => "Has recibido una consulta desde la web de Patxi. Revisa los datos para valorar si necesita pintura, restauración de madera o presupuesto.",
+    '{aviso}'               => "Se ha recibido una consulta de $nombre desde la web de ejemplo.",
+    '{explicacion}'         => "Este es un texto de ejemplo para notificar la recepción de una consulta web.",
     '{contexto}'            => 'Nueva consulta de ',
-    '{razon}'               => 'Puedes responder directamente al correo que ha facilitado y revisar el mensaje para preparar una respuesta ajustada.',
+    '{razon}'               => 'Los datos enviados se muestran a continuación como contenido de demostración.',
     '{nombre}'              => $nombre,
     '{telefono}'            => $telefono,
     '{email}'               => $email,
@@ -143,12 +133,12 @@ include $basePath . "/App/app/envioPhpMailer.php";
 
 // 3.2 enviar un correo al USUARIO DE LA WEB
 // recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
-$web = $_ENV['RUTA'];
-$correoEmisor =$_ENV['EMAIL_WEB'];
-$nombreEmisor ="Patxi Pintor Web";
+$web = app_url($url);
+$correoEmisor = env('EMAIL_WEB', '');
+$nombreEmisor = "Web de ejemplo";
 $correoDestinatario = $email;
 $nombreDestinatario= $nombre;
-$asunto = "$nombre, hemos recibido tu consulta | Patxi";
+$asunto = "$nombre, hemos recibido tu consulta | Web de ejemplo";
 
 // recoger el template con los placeholders
 $html = file_get_contents($basePath . "/App/app/templates/artForm02.html");
@@ -159,15 +149,15 @@ $vars = [
     '{web}'                 => $web,
     '{url}'                 => $url,
     '{asunto}'              => $asunto,
-    '{aviso}'               => "$nombre, hemos recibido correctamente tu consulta para Patxi.",
-    '{explicacion}'         => "Gracias por contactar con Patxi. Revisaré tu mensaje y te responderé lo antes posible para valorar el trabajo de pintura o restauración.",
+    '{aviso}'               => "$nombre, tu consulta se ha recibido correctamente en la web de ejemplo.",
+    '{explicacion}'         => "Este es un mensaje de ejemplo para confirmar la recepción del formulario.",
     '{contexto}'            => 'Gracias por escribir, ',
-    '{razon}'               => 'Consulta enviada a Patxi sobre pintura, restauración o presupuesto.',
+    '{razon}'               => 'A continuación se muestran los datos enviados como contenido de demostración.',
     '{nombre}'              => $nombre,
     '{telefono}'            => $telefono,
     '{email}'               => $email,
     '{mensaje}'             => $mensaje,
-    '{responder}'           => 'Te responderé lo antes posible con una orientación clara sobre el siguiente paso.',
+    '{responder}'           => 'Este texto corresponde a una respuesta automática de ejemplo.',
     '{fecha}'               => $fecha,
 ];
 
@@ -175,32 +165,32 @@ $cuerpo = str_replace(array_keys($vars), array_values($vars), $html);
 include $basePath . "/App/app/envioPhpMailer.php";
 
 
-// 4 guardar los datos en una bbdd
-// conexión a la DB
+// 4 guardar los datos en una BBDD, si el proyecto la ha configurado.
+$bbddHost = env('BBDD_HOST');
+$bbddUser = env('BBDD_USER');
+$bbddPass = env('BBDD_PASS');
+$bbddNombre = env('BBDD_BBDD');
 
-// Configuración de la conexión en $con
-$con = mysqli_connect($_ENV['BBDD_HOST'], $_ENV['BBDD_USER'], $_ENV['BBDD_PASS'], $_ENV['BBDD_BBDD']);
+if (extension_loaded('mysqli') && $bbddHost && $bbddUser && $bbddNombre) {
+    $con = @mysqli_connect($bbddHost, $bbddUser, (string) $bbddPass, $bbddNombre);
 
-// si la conexión es false, sacamos error
-// comprobación de la conexión
-if($con === false){
-    error_log('Error de conexion con la DB: ' . mysqli_connect_error());
-}else{
-    // en caso de que haya conexión, continuamos
-    $con->set_charset("utf8mb4");
-    $sql = "INSERT INTO `consultas_web`(`creado_en`, `nombre`, `telefono`, `email`, `mensaje`, `ip`, `idioma`, `url_origen`) VALUES (?,?,?,?,?,?,?,?)";
-    $stmt = mysqli_prepare($con, $sql);
-    // ejecutamos el insert del registro en la tabla consultas_web de la db con un prepare
-    if($stmt === false){
-        error_log('Error al preparar la insercion de la consulta: ' . mysqli_error($con));
+    if($con === false){
+        error_log('Error de conexion con la DB: ' . mysqli_connect_error());
     }else{
-        // inserción definitiva en al DB
-        mysqli_stmt_bind_param($stmt, "ssssssss", $fecha, $nombre, $telefono, $email, $mensaje, $ip, $lang, $url);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+        $con->set_charset("utf8mb4");
+        $sql = "INSERT INTO `consultas_web`(`creado_en`, `nombre`, `telefono`, `email`, `mensaje`, `ip`, `idioma`, `url_origen`) VALUES (?,?,?,?,?,?,?,?)";
+        $stmt = mysqli_prepare($con, $sql);
+
+        if($stmt === false){
+            error_log('Error al preparar la insercion de la consulta: ' . mysqli_error($con));
+        }else{
+            mysqli_stmt_bind_param($stmt, "ssssssss", $fecha, $nombre, $telefono, $email, $mensaje, $ip, $lang, $url);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
+
+        mysqli_close($con);
     }
-    // salimos
-    mysqli_close($con);
 }
 
 
@@ -209,11 +199,6 @@ if($con === false){
 // urlencode evita romper la cabecera si el nombre lleva espacios o acentos
 
 enviarRespuestaAsincrona("Gracias por escribirme, $nombre. En breve te contactaré", false, $nombre);
-
-
-
-
-?>
 
 
 

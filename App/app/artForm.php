@@ -11,17 +11,18 @@ include_once $basePath . "/App/config/helpers.php";
 
 
 // 01 Recoger los datos enviados por el form
-$nombre = $_POST['nombre'];
-$tel = $_POST['tel'];
-$email = $_POST['email'];
-$mensaje = $_POST['mensaje'];
-$terminos = $_POST['terminos'];
+$nombre = trim((string) ($_POST['nombre'] ?? ''));
+$tel = trim((string) ($_POST['tel'] ?? ''));
+$email = trim((string) ($_POST['email'] ?? ''));
+$mensaje = trim((string) ($_POST['mensaje'] ?? ''));
+$terminos = $_POST['terminos'] ?? '';
 
-$respUser = $_POST['respUser'];
-$respSystem = $_POST['respSystem'];
+$respUser = trim((string) ($_POST['respUser'] ?? ''));
+$respSystem = trim((string) ($_POST['respSystem'] ?? ''));
 
-$lang = $_POST['inputIdioma'];
-$url = $_POST['inputUrl'];
+$langRecibido = (string) ($_POST['inputIdioma'] ?? 'es');
+$lang = in_array($langRecibido, ['es', 'eu'], true) ? $langRecibido : 'es';
+$url = ruta_interna($_POST['inputUrl'] ?? '/showroom');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $fecha = date('Y-m-d H:i:s');
@@ -34,7 +35,6 @@ $fecha = date('Y-m-d H:i:s');
 // echo $mensaje.'<br>';
 // echo $ip.'<br>';
 // echo $fecha.'<br>';
-// echo $_ENV['RUTA'].'<br>';
 // echo $terminos;
 // echo $lang.'<br>';
 // echo $url;
@@ -46,71 +46,78 @@ $fecha = date('Y-m-d H:i:s');
 // 03 Validaciones de campos
 
 // Validación de aceptación de captcha
-if(empty($respUser) || empty($respSystem) || $respUser!= $respSystem){    
-    mensaje_error($lang, $_ENV['RUTA'],"captcha", "incorrecto", $nombre, $tel, $email, $mensaje);
+if(empty($respUser) || empty($respSystem) || $respUser != $respSystem){
+    mensaje_error($url, 'artForm', "captcha", "incorrecto", $nombre, $tel, $email, $mensaje);
 }
 
 
 // Validación de aceptación de términos
 if(empty($terminos)){    
-    mensaje_error($lang, $_ENV['RUTA'],"terminos", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "terminos", "vacio", $nombre, $tel, $email, $mensaje);
 }
 
 // de que no venga vacío Nombre
 if(empty($nombre)){    
-    mensaje_error($lang, $_ENV['RUTA'],"nombre", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "nombre", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el teléfono
 if(empty($tel)){    
-    mensaje_error($lang, $_ENV['RUTA'], "telefono", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "telefono", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el correo
 if(empty($email)==true){    
-    mensaje_error($lang, $_ENV['RUTA'],"email", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "email", "vacio", $nombre, $tel, $email, $mensaje);
 }
 // de que no venga vacío el correo
 if(empty($mensaje)==true){    
-    mensaje_error($lang, $_ENV['RUTA'],"mensaje", "vacio", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "mensaje", "vacio", $nombre, $tel, $email, $mensaje);
 }
 
 // de que sea un correo adecuado (con expresiones regulares)
 if(validar_email($email)==false){    
-    mensaje_error($lang, $_ENV['RUTA'],"email", "sintaxis", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "email", "sintaxis", $nombre, $tel, $email, $mensaje);
 }
 
 // Comprobar si el nombre tiene entre 4 y 40 caracteres
 $numeroCaracteres = strlen($nombre);
 if($numeroCaracteres < 3 || $numeroCaracteres > 40){
-    mensaje_error($lang, $_ENV['RUTA'],"nombre", "caracteres", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "nombre", "caracteres", $nombre, $tel, $email, $mensaje);
 }
 // Mensaje entre 5 y 200 caractéres.
 $numeroCaracteres = strlen($mensaje);
 if($numeroCaracteres < 5 || $numeroCaracteres > 200){
-    mensaje_error($lang, $_ENV['RUTA'],"mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
+    mensaje_error($url, 'artForm', "mensaje", "caracteres", $nombre, $tel, $email, $mensaje);
 }
 
 
 
 
-// Guardar la consulta en la base de datos
-$con = mysqli_connect($_ENV['BBDD_HOST'], $_ENV['BBDD_USER'], $_ENV['BBDD_PASS'], $_ENV['BBDD_BBDD']);
+// La BBDD es opcional en este stack base. Solo se usa cuando esta configurada.
+$bbddHost = env('BBDD_HOST');
+$bbddUser = env('BBDD_USER');
+$bbddPass = env('BBDD_PASS');
+$bbddNombre = env('BBDD_BBDD');
 
-if ($con === false) {
-    error_log('Error de conexion con la BBDD (consultas_web): ' . mysqli_connect_error());
-} else {
-    $con->set_charset("utf8mb4");
-    $sql = "INSERT INTO `consultas_web` (`creado_en`, `nombre`, `telefono`, `email`, `mensaje`, `ip`, `idioma`, `url_origen`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($con, $sql);
+if (extension_loaded('mysqli') && $bbddHost && $bbddUser && $bbddNombre) {
+    $con = @mysqli_connect($bbddHost, $bbddUser, (string) $bbddPass, $bbddNombre);
 
-    if ($stmt === false) {
-        error_log('Error al preparar la insercion de consultas_web: ' . mysqli_error($con));
+    if ($con === false) {
+        error_log('Error de conexion con la BBDD (consultas_web): ' . mysqli_connect_error());
     } else {
-        mysqli_stmt_bind_param($stmt, "ssssssss", $fecha, $nombre, $tel, $email, $mensaje, $ip, $lang, $url);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-    }
+        $con->set_charset("utf8mb4");
+        $sql = "INSERT INTO `consultas_web` (`creado_en`, `nombre`, `telefono`, `email`, `mensaje`, `ip`, `idioma`, `url_origen`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($con, $sql);
 
-    mysqli_close($con);
+        if ($stmt === false) {
+            error_log('Error al preparar la insercion de consultas_web: ' . mysqli_error($con));
+        } else {
+            mysqli_stmt_bind_param($stmt, "ssssssss", $fecha, $nombre, $tel, $email, $mensaje, $ip, $lang, $url);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
+
+        mysqli_close($con);
+    }
 }
 
 
@@ -119,7 +126,8 @@ if ($con === false) {
 // Crear el template del correo y darle valor a las variables que necesita phpMailer
 
 // recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
-$correoEmisor =$_ENV['EMAIL_WEB']; //debe ser un correo que esté dado de alta en el servidor (webda.eus)
+$web = app_url($url);
+$correoEmisor = env('EMAIL_WEB', ''); //debe ser un correo que esté dado de alta en el servidor (webda.eus)
 $nombreEmisor ="Panadería Aginaga";
 $correoDestinatario = $email;
 $nombreDestinatario= $nombre;
@@ -159,7 +167,7 @@ switch ($lang){
 
             <p>Gracias por escribirnos.</p>
             <p>Equipo de Panadería Agianga</p>
-            <a href="'.$_ENV['RUTA'].'/'.$lang.'">'.$_ENV['RUTA'].'/'.$lang.'</a>
+            <a href="'.$web.'">'.$web.'</a>
             
         </body> 
         </html>
@@ -199,7 +207,7 @@ switch ($lang){
 
             <p>Eskerrik asko idazteagatik.</p>
             <p>Aginagako Okindegi taldea</p>
-            <a href="'.$_ENV['RUTA'].'/'.$lang.'">'.$_ENV['RUTA'].'/'.$lang.'</a>
+            <a href="'.$web.'">'.$web.'</a>
 
         </body>
         </html>
@@ -216,9 +224,9 @@ include __DIR__ . "/envioPhpMailer.php"; //necesite ejecutar el envío de correo
 
 // enviar un correo al admin de la web
 // recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
-$correoEmisor =$_ENV['EMAIL_WEB'];
+$correoEmisor = env('EMAIL_WEB', '');
 $nombreEmisor ="Web Panadería";
-$correoDestinatario = $_ENV['EMAIL_ADMIN'];
+$correoDestinatario = env('EMAIL_ADMIN', '');
 $nombreDestinatario= "Admin de la web";
 $asunto = "Has recibido una nueva consulta en la web de $nombre";
 $cuerpo='
@@ -261,7 +269,7 @@ $cuerpo='
 
     <p>Un saludo</p>
     <p>Equipo de Panadería Agianga</p>
-    <a href="'.$_ENV['RUTA'].'">'.$_ENV['RUTA'].'</a>
+    <a href="'.$web.'">'.$web.'</a>
 
 </body> 
 </html>
@@ -270,22 +278,12 @@ include __DIR__ . "/envioPhpMailer.php";
 
 
 
-// 05 Redirección a la página de gracias.php
+// 05 Volver al recurso y mostrar la confirmacion.
+$query = http_build_query([
+    'form' => 'artForm',
+    'envio' => 'ok',
+    'nombre' => $nombre,
+]);
 
-
-switch ($lang){
-    case 'es':
-        header('location:'.$_ENV["RUTA"].'/es/gracias?nombre='.$nombre);
-        die;
-    case 'eu':
-        header('location:'.$_ENV["RUTA"].'/eu/eskerrikasko?nombre='.$nombre);
-        die;
-    default:
-        header('location:'.$_ENV["RUTA"].'/es/gracias?nombre='.$nombre);
-        die;
-}
-
-
-
-
-?>
+header('Location: ' . $url . '?' . $query . '#artForm', true, 303);
+exit;
