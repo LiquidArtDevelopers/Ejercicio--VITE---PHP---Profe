@@ -1,0 +1,9 @@
+@use "config" as c;
+@use "nav01";
+@use "footer01";
+
+// Recursos presentes en todas las vistas.
+// Los articulos, secciones y headers se cargan solo desde la vista que los usa.
+main {
+  flex: 1 0 auto;
+}

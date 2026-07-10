@@ -1,0 +1,223 @@
+<?php
+
+$basePath = dirname(__DIR__, 2);
+require_once $basePath . '/vendor/autoload.php';
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable($basePath);
+$dotenv->load();
+
+include_once $basePath . "/App/config/helpers.php";
+
+
+// aquí voy a gestionar lo que reciba del formulario
+
+// 1 recibir los datos del formulario a través de POST y meto los value en nuevas variables que usaré aquí
+// Recoger el resto de valores del form
+$nombre = $_POST['nombre'];
+$telefono = $_POST['telefono'];
+$email = $_POST['email'];
+$mensaje = $_POST['mensaje'];
+$ip = $_SERVER['REMOTE_ADDR'];
+$fecha = date('Y-m-d H:i:s');
+
+$url = $_POST['url'];
+$lang = $_POST['lang'];
+
+
+
+if(!isset($_POST['terminos']) || comprobarVacio($_POST['terminos'])){
+    // Como viene vacía, redirijo a la página de contacto
+    // echo "Hay un error pues no ha aceptado las condiciones de privacidad";
+    enviarRespuestaAsincrona("Debes aceptar las condiciones de consentimiento", true, "condiciones");
+}else{
+    $terminos = $_POST['terminos'];
+}
+
+
+// // comprobación de términos
+// if(empty($_POST['terminos'])){
+//     // Como viene vacía, redirijo a la página de contacto
+//     // echo "Hay un error pues no ha aceptado las condiciones de privacidad";
+//     header('location:/index.php?error=condiciones');
+//     die;
+// }else{
+//     $terminos = $_POST['terminos'];
+// }
+
+
+// comprobación de captcha
+$respUser = $_POST['respUser'];
+$respSystem = $_POST['respSystem'];
+// que venga vacío
+if(!isset($respUser)){
+    enviarRespuestaAsincrona("Debes cumplir con el captcha", true, "captcha");
+}
+// que la respuesta sea errónea
+if($respUser != $respSystem){
+    enviarRespuestaAsincrona("Debes resolver la operación de forma correcta", true, "captcha");
+}
+
+
+
+
+
+
+
+// echo $ip . "<br>";
+// echo $fecha;
+// die;
+
+// Zona de comprobaciones DEV
+// echo $nombre.'<br>'.$telefono.'<br>'.$email.'<br>'.$mensaje.'<br>'.$terminos.'<br>'.$respUser.'<br>'.$respSystem;
+
+
+// 2 comprobar que los datos son correctos.
+// que nombre venga vacío, salimos
+if(comprobarVacio($nombre)){
+    enviarRespuestaAsincrona("Debes rellenar el campo nombre", true, "nombre");
+}
+// // que nombre sea menor de 3 y mayor de 40, salimos
+if(comprobarCaracteres($nombre, 3, 40)){
+    enviarRespuestaAsincrona("El nombre debe tener más de 3 y menos de 40 caracteres", true, "nombre"); 
+}
+
+// que teléfono venga vacío, salimos
+if(comprobarVacio($telefono)){
+    enviarRespuestaAsincrona("El campo teléfono debe cumplimentarse", true, "telefono"); 
+}
+
+// que correo venga vacío, salimos
+if(comprobarVacio($email)){
+    enviarRespuestaAsincrona("Debes indicar el correo electrónico", true, "email"); 
+}
+
+// // que correo no tenga la forma de un correo, salimos (expresión regular)
+if(!comprobarEmailSintaxis($email)){
+    enviarRespuestaAsincrona("El correo electrónico no tiene un formato adecuado", true, "email"); 
+}
+
+// que mensaje venga vacío, salimos
+if(comprobarVacio($mensaje)){
+    enviarRespuestaAsincrona("El mensaje no puede quedar vacío", true, "mensaje"); 
+}
+// // que mensaje sea menor de 4 y mayor de 200, salimos
+if(comprobarCaracteres($mensaje, 4, 200)){
+    enviarRespuestaAsincrona("El mensaje debe tener una longitud entre 4 y 200 caracteres máximo", true, "mensaje"); 
+}
+
+// 3 enviar correos de aviso: a la empresa y al propio usuario
+
+// 3.1 enviar un correo al ADMIN DE LA WEB
+// recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
+$web = $_ENV['RUTA'];
+$correoEmisor =$_ENV['EMAIL_WEB'];
+$nombreEmisor ="Patxi Pintor Web";
+$correoDestinatario = $_ENV['EMAIL_ADMIN'];
+$nombreDestinatario= "Patxi";
+$asunto = "Nueva consulta en la web de Patxi: $nombre";
+
+// recoger el template con los placeholders
+$html = file_get_contents($basePath . "/App/app/templates/artForm02.html");
+// dar el cambiazo a los placeholders por valores definitivos
+
+// array asociativo de las relaciones de placeholders con los valores que tendrá para este correo
+$vars = [
+    '{web}'                 => $web,
+    '{url}'                 => $url,
+    '{asunto}'              => $asunto,
+    '{aviso}'               => "Has recibido una consulta de $nombre desde la web de Patxi. Ha aceptado los términos de privacidad.",
+    '{explicacion}'         => "Has recibido una consulta desde la web de Patxi. Revisa los datos para valorar si necesita pintura, restauración de madera o presupuesto.",
+    '{contexto}'            => 'Nueva consulta de ',
+    '{razon}'               => 'Puedes responder directamente al correo que ha facilitado y revisar el mensaje para preparar una respuesta ajustada.',
+    '{nombre}'              => $nombre,
+    '{telefono}'            => $telefono,
+    '{email}'               => $email,
+    '{mensaje}'             => $mensaje,
+    '{responder}'           => 'Procura responder en un plazo máximo de 2 días laborables.',
+    '{fecha}'               => $fecha,
+
+];
+$cuerpo = str_replace(array_keys($vars), array_values($vars), $html);
+include $basePath . "/App/app/envioPhpMailer.php";
+
+
+// 3.2 enviar un correo al USUARIO DE LA WEB
+// recoger más variables que necesita el phpMailer:correo emisor y el nombre emisor,el correo receptor y su nombre, título del correo
+$web = $_ENV['RUTA'];
+$correoEmisor =$_ENV['EMAIL_WEB'];
+$nombreEmisor ="Patxi Pintor Web";
+$correoDestinatario = $email;
+$nombreDestinatario= $nombre;
+$asunto = "$nombre, hemos recibido tu consulta | Patxi";
+
+// recoger el template con los placeholders
+$html = file_get_contents($basePath . "/App/app/templates/artForm02.html");
+// dar el cambiazo a los placeholders por valores definitivos
+
+// array asociativo de las relaciones de placeholders con los valores que tendrá para este correo
+$vars = [
+    '{web}'                 => $web,
+    '{url}'                 => $url,
+    '{asunto}'              => $asunto,
+    '{aviso}'               => "$nombre, hemos recibido correctamente tu consulta para Patxi.",
+    '{explicacion}'         => "Gracias por contactar con Patxi. Revisaré tu mensaje y te responderé lo antes posible para valorar el trabajo de pintura o restauración.",
+    '{contexto}'            => 'Gracias por escribir, ',
+    '{razon}'               => 'Consulta enviada a Patxi sobre pintura, restauración o presupuesto.',
+    '{nombre}'              => $nombre,
+    '{telefono}'            => $telefono,
+    '{email}'               => $email,
+    '{mensaje}'             => $mensaje,
+    '{responder}'           => 'Te responderé lo antes posible con una orientación clara sobre el siguiente paso.',
+    '{fecha}'               => $fecha,
+];
+
+$cuerpo = str_replace(array_keys($vars), array_values($vars), $html);
+include $basePath . "/App/app/envioPhpMailer.php";
+
+
+// 4 guardar los datos en una bbdd
+// conexión a la DB
+
+// Configuración de la conexión en $con
+$con = mysqli_connect($_ENV['BBDD_HOST'], $_ENV['BBDD_USER'], $_ENV['BBDD_PASS'], $_ENV['BBDD_BBDD']);
+
+// si la conexión es false, sacamos error
+// comprobación de la conexión
+if($con === false){
+    error_log('Error de conexion con la DB: ' . mysqli_connect_error());
+}else{
+    // en caso de que haya conexión, continuamos
+    $con->set_charset("utf8mb4");
+    $sql = "INSERT INTO `consultas_web`(`creado_en`, `nombre`, `telefono`, `email`, `mensaje`, `ip`, `idioma`, `url_origen`) VALUES (?,?,?,?,?,?,?,?)";
+    $stmt = mysqli_prepare($con, $sql);
+    // ejecutamos el insert del registro en la tabla consultas_web de la db con un prepare
+    if($stmt === false){
+        error_log('Error al preparar la insercion de la consulta: ' . mysqli_error($con));
+    }else{
+        // inserción definitiva en al DB
+        mysqli_stmt_bind_param($stmt, "ssssssss", $fecha, $nombre, $telefono, $email, $mensaje, $ip, $lang, $url);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+    // salimos
+    mysqli_close($con);
+}
+
+
+
+// 5 redirigir a la página index para mostrar un mensaje de envío ok, en vez del formulario
+// urlencode evita romper la cabecera si el nombre lleva espacios o acentos
+
+enviarRespuestaAsincrona("Gracias por escribirme, $nombre. En breve te contactaré", false, $nombre);
+
+
+
+
+?>
+
+
+
+
+
+
+
