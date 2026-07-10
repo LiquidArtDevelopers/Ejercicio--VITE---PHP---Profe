@@ -11,6 +11,7 @@
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
   <body>
+
     <?php require app_path('includes/nav.php'); ?>
 
     <header class="header02">
@@ -48,6 +49,8 @@
             <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
           </div>
         </article>
+
+        
       </section>
     </main>
 

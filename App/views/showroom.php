@@ -12,6 +12,7 @@
   </head>
   <body>
     <?php require app_path('includes/nav.php'); ?>
+    
     <header class="header01">
       <img class="header01__media" src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
       <div class="header01__content">
@@ -22,19 +23,21 @@
       </div>
     </header>
 
+    <header class="header02">
+        <img class="header02__media" src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
+        <div class="header02__content">
+        <p class="header02__eyebrow">Header 02</p>
+        <h3 class="header02__title">Header 02</h3>
+        <p class="header02__text">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem et realitatem.</p>
+        <a href="#showroom-recursos" class="boton">Continuar</a>
+        </div>
+    </header>
+
     <main>
 
       <section aria-labelledby="headers-title">
         <h2 id="headers-title">Recursos Header</h2>
-        <header class="header02">
-          <img class="header02__media" src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
-          <div class="header02__content">
-            <p class="header02__eyebrow">Header 02</p>
-            <h3 class="header02__title">Header 02</h3>
-            <p class="header02__text">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem et realitatem.</p>
-            <a href="#showroom-recursos" class="boton">Continuar</a>
-          </div>
-        </header>
+        
       </section>
 
       <!--  -->
