@@ -3,7 +3,7 @@
 // Header principal: imagen a sangre y contenido centrado.
 .header01 {
   position: relative;
-  min-height: calc(100svh - 8rem);
+  min-height: 100dvh;
   padding: 7rem c.$padMin 4rem;
   overflow: hidden;
   isolation: isolate;

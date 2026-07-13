@@ -1,8 +1,6 @@
 import "../scss/showroom.scss";
 import "./resources/_global.js";
 
-import "./resources/_artForm.js";
-import "./resources/_artForm01.js";
 import "./resources/_artForm02.js";
 
 import artSlider from "./resources/_artSlider.js";

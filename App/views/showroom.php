@@ -11,7 +11,7 @@
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
   <body>
-    <?php require app_path('includes/nav.php'); ?>
+    <?php require app_path('includes/es/nav.php'); ?>
     
     <header class="header01">
       <img class="header01__media" src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
@@ -574,210 +574,6 @@
           </article>
         
 
-          <!-- artForm -->
-          <article class="artForm" id="artForm">
-              <h3>artForm</h3>
-
-              <?php
-              $artFormEnviado = ($_GET['form'] ?? '') === 'artForm' && ($_GET['envio'] ?? '') === 'ok';
-              ?>
-
-              <?php if (!$artFormEnviado): ?>
-              <!-- Al abrir este otro archivo, genero otro scope, se reseta y limpia la memoria en el servidor -->
-              <form action="/app/artForm" method="post">
-
-                  <?php
-                  if(($_GET['form'] ?? '') === 'artForm' && isset($_GET['campo'])){
-                      // si entro es que viene un error marcado en la url con query string
-                      $artFormCampo = $_GET['campo'];
-                      $artFormError = $_GET['error'] ?? '';
-                      $artFormNombre = $_GET['nombre'] ?? '';
-                      $artFormTel = $_GET['tel'] ?? '';
-                      $artFormEmail = $_GET['email'] ?? '';
-                      $artFormMensaje = $_GET['mensaje'] ?? '';
-                      // echo "<p class='error'>Hay un error en el campo $campo de tipo $error</p>";
-                  }
-                  ?>
-
-                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "nombre"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
-                  <label for="nombre">Nombre *</label>
-                  <!-- <input type="text" name="nombre" id="nombre" placeholder="* Escribe tu nombre" minlength="3" maxlength="40" required > -->
-                  <input type="text" class='<?php if(isset($artFormCampo) && $artFormCampo == "nombre"){ echo "inputError";} ?>' name="nombre" id="nombre" placeholder="* Escribe tu nombre" value="<?= e($artFormNombre ?? '') ?>">
-
-                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "telefono"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
-                  <label for="tel">Teléfono</label>
-                  <input type="tel" class='<?php if(isset($artFormCampo) && $artFormCampo == "telefono"){ echo "inputError";} ?>' name="tel" id="tel" placeholder="Aquí tu teléfono" value="<?= e($artFormTel ?? '') ?>">
-
-
-                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "email"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
-                  <label for="email">Email *</label>
-                  <input type="email" class='<?php if(isset($artFormCampo) && $artFormCampo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Correo electrónico" value="<?= e($artFormEmail ?? '') ?>">
-
-
-                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "mensaje"){echo sprintf("Hay un error en el campo %s de tipo %s", e($artFormCampo), e($artFormError));} ?></span>
-                  <label for="mensaje">Comentarios</label>
-                  <textarea name="mensaje" class='<?php if(isset($artFormCampo) && $artFormCampo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aquí tu mensaje"><?= e($artFormMensaje ?? '') ?></textarea>
-
-                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
-                  <div>
-                      <input type="checkbox" name="terminos" id="aceptarTerminos">
-                      <label for="aceptarTerminos">Aceptar <a href="<?= route_url('/legal') ?>#politica-privacidad">términos y condiciones de privacidad</a></label>
-                  </div>
-
-                  <!-- CAPTCHA -->
-                  <span class="error"><?php if(isset($artFormCampo) && $artFormCampo == "captcha"){echo "No has resuelto correctamente el Captcha";} ?></span>
-                  <div>
-                      <label for="respUser">Resuelve:</label>
-
-                      <!-- campos que rellenamos desde js con números random -->
-                      <span id="num1">XX</span>
-                      <span>+</span>
-                      <span id="num2">XX</span>
-
-                      <!-- campo que debe rellenar el usuario con la solución -->
-                      <input type="text" name="respUser" id="respUser">
-
-                      <!-- campo oculto con la respuesta correcta asignada desde js -->
-                      <input type="hidden" name="respSystem" id="respSystem" value="XXXX">
-                  </div>
-
-                  <!-- input oculto donde el value es el valor de $lang, ergo el idioma -->
-                  <input type="text" name="inputIdioma" value="<?= e($lang) ?>" style="display:none;">
-                  <!-- otro input oculto -->
-                  <input type="text" name="inputUrl" value="<?= e($url) ?>" style="display:none;">
-
-
-                  <input type="submit" value="ENVIAR" class="boton">
-
-                  <p>* Campos obligatorios</p>
-
-              </form>
-              <?php else: ?>
-                  <p>Gracias, hemos recibido tu consulta <?= e($_GET['nombre'] ?? '') ?>.</p>
-              <?php endif; ?>
-
-          </article>
-
-          <!-- artForm01 -->
-          <article class="artForm01" id="artForm01">
-
-              <?php
-              // comprobar si hay variables get en la URL
-              // si hay variables las voy a recoger aquí
-              // si recojo variables, las usaré en el formulario para mostrar mensajes, por ejemplo de error, por ejemplo losvalorfes que el user había puesto antes en el formulario
-              // Recoger el error si existe error, y mostrar el mensaje con el error
-              // Depende del error, lo mostraremos encima del input donde está el error
-              // Como recogemos los value de los input que el user mandó al backend, volvemos a rellenar los values de los input con esos valores, para que se respete el UX
-
-              $artForm01Enviado = ($_GET['form'] ?? '') === 'artForm01' && ($_GET['envio'] ?? '') === 'ok';
-
-              if(($_GET['form'] ?? '') === 'artForm01' && isset($_GET['error'])){
-                  $artForm01Error = $_GET['error'];
-                  $artForm01Campo = $_GET['campo'] ?? '';
-                  $artForm01Nombre = $_GET['nombre'] ?? '';
-                  $artForm01Telefono = $_GET['tel'] ?? '';
-                  $artForm01Email = $_GET['email'] ?? '';
-                  $artForm01Mensaje = $_GET['mensaje'] ?? '';
-              }
-
-              ?>
-
-              <h3>artForm01</h3>
-              <div>
-                  <div class="contenedor-form">
-                  <img src="<?= asset('assets/icons/mail.svg') ?>" alt="">
-                  <?php
-                  if(!$artForm01Enviado){
-                  ?>
-                  <form action="/app/artForm01" method="post" id="idForm">
-
-                      <?php
-                      if(isset($artForm01Error)){
-                      ?>
-                      <p class="error">Hay un error en el campo <?= e($artForm01Campo) ?> de tipo <?= e($artForm01Error) ?></p>
-                      <?php
-                      }
-                      ?>
-
-                      <!-- nombre -->
-                      <label for="nombre">Nombre *</label>
-                      <input type="text" id="nombre" name="nombre" placeholder="Escribe aquí tu nombre *" value="<?= e($artForm01Nombre ?? '') ?>">
-
-                      <!-- teléfono -->
-                      <label for="telefono">Teléfono *</label>
-                      <input type="tel" id="telefono" name="telefono" placeholder="Escribe aquí tu teléfono *" value="<?= e($artForm01Telefono ?? '') ?>">
-
-                      <!-- Correo -->
-                      <label for="email">Correo Electrónico</label>
-                      <input type="email" id="email" name="email" placeholder="Escribe aquí tu correo electrónico" value="<?= e($artForm01Email ?? '') ?>">
-
-                      <!-- Mensaje -->
-                      <label for="mensaje">Escribe tu mensaje</label>
-                      <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí tu mensaje"><?= e($artForm01Mensaje ?? '') ?></textarea>
-
-                      <!-- términos -->
-                      <div class="horizontal">
-                      <label for="terminos">Aceptar términos y condiciones de privacidad</label>
-                      <input type="checkbox" name="terminos" id="terminos">
-                      </div>
-                      
-
-                      <!-- captcha -->
-                      <label for="respuesta">Resuelve</label>
-                      <div class="horizontal">
-                      <span id="num1Form01">3</span>
-                      <span id="operadorForm01">+</span>
-                      <span id="num2Form01">7</span>
-                      <input type="text" name="respUser" id="respuestaForm01" placeholder="Respuesta" autocomplete="off">
-                      <input type="hidden" name="respSystem" id="respSystemForm01" value="">
-                      </div>                    
-
-                      <input type="hidden" name="url" value="<?= e($url) ?>">
-                      <input type="hidden" name="lang" value="<?= e($lang) ?>">
-
-                      <input type="submit" class="boton" value="Enviar">
-                  </form>
-                  <?php
-                  }else{
-                  ?>
-                  <h3>Gracias, hemos recibido tu consulta <?= e($_GET['nombre'] ?? '') ?></h3>
-                  <?php
-                  }
-                  ?>
-
-                  </div>
-                  <div class="contenedor-info">
-                  <ul>
-                      <li>
-                      <a href="tel:+34943123123" target="_blank">
-                          <img src="<?= asset('assets/icons/tel.svg') ?>" alt="" title="">
-                          <span>943 123 123</span>
-                      </a>
-                      </li>
-                      <li>
-                      <a href="mailto:aranaz@webda.eus" target="_blank">
-                          <img src="<?= asset('assets/icons/mail.svg') ?>" alt="" title="">
-                          <span>aranaz@webda.eus</span>
-                      </a>
-                      </li>
-                      <li>
-                      <a href="https://wa.me/628749350" target="_blank">
-                          <img src="<?= asset('assets/icons/wa.svg') ?>" alt="" title="">
-                          <span>628 749 350</span>
-                      </a>
-                      </li>
-                      <li>
-                      <a href="https://maps.app.goo.gl/Kh7rZM3WF1chSZSj7" target="_blank">
-                          <img src="<?= asset('assets/icons/map.svg') ?>" alt="" title="">
-                          <span>C/ Juan Fermín, Juan F. Gilisagasti Kalea, 4, 1º, 20018 Donostia / San Sebastián, Gipuzkoa</span>
-                      </a>
-                      </li>
-                  </ul>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1886.901188915529!2d-2.0047191655624914!3d43.29790730427824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b013f0513629%3A0x57e4ff3311f619d9!2s%C3%81rea%20Escuela%20de%20Dise%C3%B1o%20y%20Nuevas%20Tecnolog%C3%ADas!5e1!3m2!1ses!2ses!4v1768584957042!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  </div>
-              </div>
-          </article>
-
           <!-- artForm02 ajax -->
           <article class="artForm02">          
 
@@ -1221,7 +1017,7 @@
     </main>
 
     
-    <?php require app_path('includes/footer.php'); ?>
+    <?php require app_path('includes/es/footer.php'); ?>
 
   </body>
 </html>

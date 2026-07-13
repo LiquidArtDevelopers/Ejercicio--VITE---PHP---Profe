@@ -83,7 +83,8 @@ const initNav01 = () => {
       }
     });
 
-    window.matchMedia("(min-width: 1100px)").addEventListener("change", (event) => {
+    // Debe coincidir con $desktop de _config.scss.
+    window.matchMedia("(min-width: 1200px)").addEventListener("change", (event) => {
       if (event.matches) {
         setOpen(false);
         closeSubmenus();

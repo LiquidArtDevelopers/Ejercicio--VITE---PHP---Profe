@@ -54,12 +54,6 @@ function comprobarEmailSintaxis($email): bool
     return filter_var((string) $email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
-// Nombre usado por el primer ejemplo de formulario.
-function validar_email($email): bool
-{
-    return comprobarEmailSintaxis($email);
-}
-
 // Solo permite volver a una ruta de esta web, nunca a un dominio externo.
 function ruta_interna($ruta, string $fallback = '/showroom'): string
 {
@@ -80,31 +74,6 @@ function app_url(string $path = ''): string
     $host = $_SERVER['HTTP_HOST'] ?? 'localhost:3000';
 
     return $scheme . '://' . $host . ($path !== '' ? '/' . ltrim($path, '/') : '');
-}
-
-// Devuelve el formulario clasico a su vista con el error y los valores escritos.
-function mensaje_error(
-    string $ruta,
-    string $formulario,
-    string $campo,
-    string $error,
-    string $nombre,
-    string $telefono,
-    string $email,
-    string $mensaje
-): void {
-    $query = http_build_query([
-        'form' => $formulario,
-        'campo' => $campo,
-        'error' => $error,
-        'nombre' => $nombre,
-        'tel' => $telefono,
-        'email' => $email,
-        'mensaje' => $mensaje,
-    ]);
-
-    header('Location: ' . ruta_interna($ruta) . '?' . $query . '#' . rawurlencode($formulario), true, 303);
-    exit;
 }
 
 function enviarRespuestaAsincrona(string $mensaje, bool $fallo, string $param3): void
@@ -221,4 +190,3 @@ function vite_tags(?string $resources): string
 
     return implode(PHP_EOL, $tags);
 }
-

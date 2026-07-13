@@ -4,6 +4,7 @@ return [
     'langs' => ['es', 'eu'],
     'lang_default' => env('LANG_DEFAULT', 'es'),
     'global_routes' => [
+        // comentar cuando subamos a producción para que no exista una url de showroom
         '/showroom' => [
             'view' => 'showroom.php',
             'resources' => 'src/assets/js/showroom.js',
@@ -13,8 +14,6 @@ return [
     // Rutas que reciben formularios. La clave es el action del formulario y
     // el valor es el archivo PHP que debe procesar sus datos.
     'post_routes' => [
-        '/app/artForm' => 'app/artForm.php',
-        '/app/artForm01' => 'app/artForm01.php',
         '/app/artForm02' => 'app/artForm02.php',
     ],
 
@@ -32,15 +31,15 @@ return [
                 'view' => 'equipo.php',
                 'resources' => 'src/assets/js/equipo.js',
             ],
-            '/es/productos' => [
+            '/es/servicios' => [
                 'view' => 'productos.php',
                 'resources' => 'src/assets/js/productos.js',
             ],
-            '/es/producto1' => [
+            '/es/servicios/pintor' => [
                 'view' => 'producto1.php',
                 'resources' => 'src/assets/js/producto.js',
             ],
-            '/es/producto2' => [
+            '/es/servicios/restaurador-muebles' => [
                 'view' => 'producto2.php',
                 'resources' => 'src/assets/js/producto.js',
             ],

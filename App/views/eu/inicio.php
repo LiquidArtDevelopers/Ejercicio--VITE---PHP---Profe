@@ -11,7 +11,7 @@
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
   <body>
-    <?php require app_path('includes/nav.php'); ?>
+    <?php require app_path('includes/eu/nav.php'); ?>
 
     <header class="header02">
       <img class="header02__media" src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix">
@@ -51,6 +51,6 @@
       </section>
     </main>
 
-    <?php require app_path('includes/footer.php'); ?>
+    <?php require app_path('includes/eu/footer.php'); ?>
   </body>
 </html>

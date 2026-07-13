@@ -1,5 +1,10 @@
 @use 'config' as c;
 
+$anchoContenido: 1180px;
+$bordeRadio: 8px;
+$tamanoControl: 2.75rem;
+
+// Este bloque es independiente porque enlaces01 se reutiliza también en el footer.
 .enlaces01{
     list-style: none;
     display: flex;
@@ -13,6 +18,21 @@
 
         &--hasSubmenu{
             position: relative;
+
+            &.is-submenu-open{
+                .enlaces01__submenuToggle{
+                    border-color: c.$color03;
+                    background-color: c.$color01bis;
+                }
+
+                .enlaces01__chevron{
+                    transform: rotate(180deg);
+                }
+
+                .enlaces01__submenu{
+                    display: flex;
+                }
+            }
         }
     }
 
@@ -23,12 +43,12 @@
     }
 
     &__link{
-        min-height: 2.75rem;
+        min-height: $tamanoControl;
         display: flex;
         align-items: center;
         gap: 0.65rem;
         padding: 0.7rem 0.85rem;
-        border-radius: 8px;
+        border-radius: $bordeRadio;
         color: c.$color01;
         font-family: c.$fuenteTitulos;
         font-size: 1rem;
@@ -65,10 +85,10 @@
     }
 
     &__submenuToggle{
-        width: 2.75rem;
-        min-height: 2.75rem;
+        width: $tamanoControl;
+        min-height: $tamanoControl;
         border: 1px solid c.$color01bis;
-        border-radius: 8px;
+        border-radius: $bordeRadio;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -77,8 +97,7 @@
         transition: border-color 200ms ease, background-color 200ms ease;
 
         &:hover,
-        &:focus-visible,
-        .enlaces01__item--hasSubmenu.is-submenu-open &{
+        &:focus-visible{
             border-color: c.$color03;
             background-color: c.$color01bis;
         }
@@ -88,10 +107,6 @@
         width: 1.1rem;
         height: 1.1rem;
         transition: transform 200ms ease;
-
-        .enlaces01__item--hasSubmenu.is-submenu-open &{
-            transform: rotate(180deg);
-        }
     }
 
     &__submenu{
@@ -101,13 +116,11 @@
         gap: 0.2rem;
         margin: 0.25rem 0 0.35rem 2.1rem;
         padding: 0;
-
-        .enlaces01__item--hasSubmenu.is-submenu-open &{
-            display: flex;
-        }
     }
 }
 
+// Nav mobile-first: primero se define el menú cerrado de móvil y cada media
+// amplía solamente el elemento que cambia en escritorio.
 .nav01{
     position: sticky;
     top: 0;
@@ -116,8 +129,31 @@
     border-bottom: 1px solid c.$color01bis;
     box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.08);
 
+    &.is-open{
+        .nav01__toggleLine{
+            &:nth-child(1){
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2){
+                opacity: 0;
+            }
+
+            &:nth-child(3){
+                transform: rotate(-45deg);
+            }
+        }
+
+        .nav01__panel{
+            grid-template-rows: 1fr;
+            visibility: visible;
+            pointer-events: auto;
+            transition-delay: 0s;
+        }
+    }
+
     &__inner{
-        width: min(100% - 2rem, 1180px);
+        width: min(100% - 2rem, $anchoContenido);
         min-height: 4.5rem;
         margin-inline: auto;
         display: flex;
@@ -135,11 +171,11 @@
     }
 
     &__logo{
-        width: 2.75rem;
-        height: 2.75rem;
+        width: $tamanoControl;
+        height: $tamanoControl;
         display: grid;
         place-items: center;
-        border-radius: 8px;
+        border-radius: $bordeRadio;
         color: c.$color00;
         background: linear-gradient(135deg, c.$color02, c.$color03);
         font-family: c.$fuenteTitulos;
@@ -158,10 +194,10 @@
 
     &__toggle{
         position: relative;
-        width: 2.75rem;
-        height: 2.75rem;
+        width: $tamanoControl;
+        height: $tamanoControl;
         border: 0;
-        border-radius: 8px;
+        border-radius: $bordeRadio;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -192,17 +228,6 @@
             transform: translateY(0.45rem);
         }
 
-        .nav01.is-open &:nth-child(1){
-            transform: rotate(45deg);
-        }
-
-        .nav01.is-open &:nth-child(2){
-            opacity: 0;
-        }
-
-        .nav01.is-open &:nth-child(3){
-            transform: rotate(-45deg);
-        }
     }
 
     &__panel{
@@ -213,27 +238,28 @@
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
+        visibility: hidden;
+        pointer-events: none;
         background-color: rgba(c.$color00, 0.98);
         border-bottom: 1px solid c.$color01bis;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
-        transition: grid-template-rows 250ms ease;
-
-        .nav01.is-open &{
-            grid-template-rows: 1fr;
-        }
+        transition: grid-template-rows 250ms ease, visibility 0s linear 250ms;
 
         @media only screen and (min-width:c.$desktop){
             position: static;
             display: block;
             overflow: visible;
+            visibility: visible;
+            pointer-events: auto;
             background-color: transparent;
             border-bottom: 0;
             box-shadow: none;
+            transition: none;
         }
     }
 
     &__panelInner{
-        width: min(100% - 2rem, 1180px);
+        width: min(100% - 2rem, $anchoContenido);
         min-height: 0;
         margin-inline: auto;
         overflow: hidden;
@@ -303,7 +329,7 @@
         &__submenu{
             @media only screen and (min-width:c.$desktop){
                 position: absolute;
-                top: calc(100% + 0.45rem);
+                top: 100%;
                 left: 0;
                 z-index: 1001;
                 min-width: 13rem;
@@ -316,7 +342,7 @@
                 transform: translateY(0.35rem);
                 background-color: c.$color00;
                 border: 1px solid c.$color01bis;
-                border-radius: 8px;
+                border-radius: $bordeRadio;
                 box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.14);
                 transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
             }
@@ -353,13 +379,13 @@
     }
 
     &__lang{
-        min-width: 2.75rem;
+        min-width: $tamanoControl;
         min-height: 2.25rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         border: 1px solid c.$color01bis;
-        border-radius: 8px;
+        border-radius: $bordeRadio;
         color: c.$color01;
         background-color: c.$color00;
         font-family: c.$fuenteTitulos;

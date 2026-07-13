@@ -10,7 +10,7 @@
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
   <body>
-    <?php require app_path('includes/nav.php'); ?>
+    <?php require app_path('includes/es/nav.php'); ?>
 
     <main class="legalPage">
       <header class="legalPage__hero">
@@ -77,6 +77,6 @@
       </section>
     </main>
 
-    <?php require app_path('includes/footer.php'); ?>
+    <?php require app_path('includes/es/footer.php'); ?>
   </body>
 </html>

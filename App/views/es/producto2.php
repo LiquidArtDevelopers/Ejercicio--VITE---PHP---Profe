@@ -11,7 +11,7 @@
     <?= vite_tags($route['resources'] ?? null) ?>
   </head>
   <body>
-    <?php require app_path('includes/nav.php'); ?>
-    <?php require app_path('includes/footer.php'); ?>
+    <?php require app_path('includes/es/nav.php'); ?>
+    <?php require app_path('includes/es/footer.php'); ?>
 </body>
 </html>
