@@ -49,7 +49,7 @@ return [
             ],
             '/es/404' => [
                 'view' => '404.php',
-                'resources' => 'src/assets/js/inicio.js',
+                'resources' => 'src/assets/js/404.js',
             ],
         ],
         'eu' => [
@@ -83,7 +83,7 @@ return [
             ],
             '/eu/404' => [
                 'view' => '404.php',
-                'resources' => 'src/assets/js/inicio.js',
+                'resources' => 'src/assets/js/404.js',
             ],
         ]
     ],
