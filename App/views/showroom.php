@@ -68,7 +68,7 @@
                           <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
                           <a href="" class="moduloBoton01">
                               <span>Módulo Botón 01</span>
-                              <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="" title="">
+                              <img src="<?= asset('assets/img/icons/arrow-forward-outline.svg') ?>" alt="" title="">
                           </a>
                       </div>
                       <div class="card">
@@ -77,13 +77,13 @@
                           <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem et realitatem.</p>
                           <a href="" class="moduloBoton01">
                               <span>Módulo Botón 01</span>
-                              <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="" title="">
+                              <img src="<?= asset('assets/img/icons/arrow-forward-outline.svg') ?>" alt="" title="">
                           </a>
                       </div>
                   </div>
                   <a href="" class="moduloBoton02">
                       <span>Módulo Botón 02</span>
-                      <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/arrow-forward-outline.svg') ?>" alt="" title="">
                   </a>
               </div>
               <!-- hijo 2 -->
@@ -104,28 +104,28 @@
               <ul>
                   <li>
                       <a href="tel:+34943123123" title="Llámanos al 943 123 123" target="_blank">
-                          <img src="<?= asset('assets/icons/call.svg') ?>" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20"> 
+                          <img src="<?= asset('assets/img/icons/call.svg') ?>" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20">
                           <span>943 123 123</span>
                       </a>
                   </li>
 
                   <li>
                       <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Escríbenos al whatsapp 600 123 123" target="_blank">
-                          <img src="<?= asset('assets/icons/logo-whatsapp.svg') ?>" alt="Escríbenos al whatsapp 600 123 123" title="Escríbenos al whatsapp 600 123 123" width="20" height="20"> 
+                          <img src="<?= asset('assets/img/icons/logo-whatsapp.svg') ?>" alt="Escríbenos al whatsapp 600 123 123" title="Escríbenos al whatsapp 600 123 123" width="20" height="20">
                           <span>600 123 123</span>
                       </a>
                   </li>       
 
                   <li>
                       <a href="mailto:aranaz@gmail.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" target="_blank">
-                          <img src="<?= asset('assets/icons/mail.svg') ?>" alt="Mándanos un correo a la siguiente dirección correo@correo.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" width="20" height="20"> 
+                          <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="Mándanos un correo a la siguiente dirección correo@correo.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" width="20" height="20">
                           <span>correo@correo.com</span>
                       </a>
                   </li>
 
                   <li>
                       <a href="https://maps.app.goo.gl/EB3bPiGW1yfoJg3p9" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" target="_blank">
-                          <img src="<?= asset('assets/icons/location.svg') ?>" alt="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" width="20" height="20"> 
+                          <img src="<?= asset('assets/img/icons/location.svg') ?>" alt="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" width="20" height="20">
                           <span>Paseo Portuetxe 23b<br>413 Donostia</span>
                       </a>
                   </li>
@@ -153,7 +153,7 @@
                   <!-- <a href="" class="boton">CTA</a> -->
                   <a href="" class="moduloBoton02">
                       <span>Módulo Botón 02</span>
-                      <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/arrow-forward-outline.svg') ?>" alt="" title="">
                   </a>
               </div>
           </article>
@@ -167,7 +167,7 @@
                   <!-- <a href="" class="boton">Más info</a> -->
                   <a href="" class="moduloBoton02">
                       <span>Módulo Botón 02</span>
-                      <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/arrow-forward-outline.svg') ?>" alt="" title="">
                   </a>
               </div>
 
@@ -186,7 +186,7 @@
                   <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
                   <a href="./productos-panaderia.php" class="moduloBoton02">
                       <span>Módulo Botón 02</span>
-                      <img src="<?= asset('assets/icons/arrow-forward-outline.svg') ?>" alt="Matrix ipsum" title="Matrix ipsum">
+                      <img src="<?= asset('assets/img/icons/arrow-forward-outline.svg') ?>" alt="Matrix ipsum" title="Matrix ipsum">
                   </a>
               </div>
 
@@ -318,23 +318,23 @@
                   <h4>Matrix ipsum columna 01</h4>
                   <ul>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: pillula rubra.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: codex revelatus.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: Zion vigilat.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: Neo eligendi.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: machinae quaerunt.</span>
                       </li>
                   </ul>
@@ -344,23 +344,23 @@
                   <h4>Matrix ipsum columna 02</h4>
                   <ul>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: simulacrum cadit.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: Morpheus respondet.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: Trinity navigat.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: Agent Smith advenit.</span>
                       </li>
                       <li>
-                      <img src="<?= asset('assets/icons/checkmark-circle.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/checkmark-circle.svg') ?>" alt="" title="">
                       <span>Matrix ipsum: realitas aperitur.</span>
                       </li>
                   </ul>
@@ -376,47 +376,47 @@
               <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
               <div class="matrix-items">
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/home-solid.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/home-solid.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 01</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/garages.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/garages.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 02</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/furniture.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/furniture.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 03</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Pillula rubra aperiam systema.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/paint-tool.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/paint-tool.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 04</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/tools-power-drill-sharp.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/tools-power-drill-sharp.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 05</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Zion libertatem defendit.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/stairs-arch.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/stairs-arch.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 06</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Machinae mundum regunt.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/business.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/business.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 07</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Simulacrum veritatem celat.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/house-check-fill.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/house-check-fill.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 08</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Codex realitatem mutat.</p>
                   </div>
                   <div class="ficha">
-                      <img src="<?= asset('assets/icons/thumbs-up-outline.svg') ?>" alt="" title="">
+                      <img src="<?= asset('assets/img/icons/thumbs-up-outline.svg') ?>" alt="" title="">
                       <h4 class="sub-header">Matrix ipsum 09</h4>
                       <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo systema transcendit.</p>
                   </div>
@@ -581,7 +581,7 @@
               <div>
                   <div class="contenedor-form">
                   
-                  <img src="<?= asset('assets/icons/mail.svg') ?>" alt="">
+                  <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="">
                                   
 
                   <!-- MODAL QUE SALE CUANDO SE ENVÍA EL FORM CON ÉXITO -->
@@ -701,25 +701,25 @@
                   <ul>
                       <li>
                       <a href="tel:+34943123123" target="_blank">
-                          <img src="<?= asset('assets/icons/tel.svg') ?>" alt="" title="">
+                          <img src="<?= asset('assets/img/icons/tel.svg') ?>" alt="" title="">
                           <span>943 123 123</span>
                       </a>
                       </li>
                       <li>
                       <a href="mailto:aranaz@webda.eus" target="_blank">
-                          <img src="<?= asset('assets/icons/mail.svg') ?>" alt="" title="">
+                          <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="" title="">
                           <span>aranaz@webda.eus</span>
                       </a>
                       </li>
                       <li>
                       <a href="https://wa.me/628749350" target="_blank">
-                          <img src="<?= asset('assets/icons/wa.svg') ?>" alt="" title="">
+                          <img src="<?= asset('assets/img/icons/wa.svg') ?>" alt="" title="">
                           <span>628 749 350</span>
                       </a>
                       </li>
                       <li>
                       <a href="https://maps.app.goo.gl/Kh7rZM3WF1chSZSj7" target="_blank">
-                          <img src="<?= asset('assets/icons/map.svg') ?>" alt="" title="">
+                          <img src="<?= asset('assets/img/icons/map-pin-solid.svg') ?>" alt="" title="">
                           <span>C/ Juan Fermín, Juan F. Gilisagasti Kalea, 4, 1º, 20018 Donostia / San Sebastián, Gipuzkoa</span>
                       </a>
                       </li>
@@ -777,23 +777,23 @@
           <!-- ModulePersonal01 -->
           <div class="modulePersonal01">
             <div>
-              <img src="<?= asset('assets/icons/truck.svg') ?>" alt="">
+              <img src="<?= asset('assets/img/icons/truck.svg') ?>" alt="">
               <h4>modulePersonal01 · Item 01</h4>
             </div>
             <div>
-              <img src="<?= asset('assets/icons/tools.svg') ?>" alt="">
+              <img src="<?= asset('assets/img/icons/tools.svg') ?>" alt="">
               <h4>modulePersonal01 · Item 02</h4>
             </div>
             <div>
-              <img src="<?= asset('assets/icons/clip.svg') ?>" alt="">
+              <img src="<?= asset('assets/img/icons/clip.svg') ?>" alt="">
               <h4>modulePersonal01 · Item 03</h4>
             </div>
             <div>
-              <img src="<?= asset('assets/icons/bag.svg') ?>" alt="">
+              <img src="<?= asset('assets/img/icons/bag.svg') ?>" alt="">
               <h4>modulePersonal01 · Item 04</h4>
             </div>
             <div>
-              <img src="<?= asset('assets/icons/money.svg') ?>" alt="">
+              <img src="<?= asset('assets/img/icons/money.svg') ?>" alt="">
               <h4>modulePersonal01 · Item 05</h4>
             </div>
           </div>
@@ -988,24 +988,24 @@
         <div class="modulePersonal01">
           <div>
             <h4 data-lang>modulePersonal01 · Item 01</h4>
-            <img src="<?= asset('assets/icons/truck.svg') ?>" alt="">
+            <img src="<?= asset('assets/img/icons/truck.svg') ?>" alt="">
             
           </div>
           <div>
             <h4>modulePersonal01 · Item 02</h4>
-            <img src="<?= asset('assets/icons/tools.svg') ?>" alt="">
+            <img src="<?= asset('assets/img/icons/tools.svg') ?>" alt="">
           </div>
           <div>
             <h4>modulePersonal01 · Item 03</h4>
-            <img src="<?= asset('assets/icons/clip.svg') ?>" alt="">
+            <img src="<?= asset('assets/img/icons/clip.svg') ?>" alt="">
           </div>
           <div>
             <h4>modulePersonal01 · Item 04</h4>
-            <img src="<?= asset('assets/icons/bag.svg') ?>" alt="">
+            <img src="<?= asset('assets/img/icons/bag.svg') ?>" alt="">
           </div>
           <div>
             <h4>modulePersonal01 · Item 05</h4>
-            <img src="<?= asset('assets/icons/money.svg') ?>" alt="">
+            <img src="<?= asset('assets/img/icons/money.svg') ?>" alt="">
           </div>
         </div>
 

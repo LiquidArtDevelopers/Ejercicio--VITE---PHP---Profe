@@ -100,7 +100,7 @@
             <div>
                 <div class="contenedor-form">
                 
-                <img src="<?= asset('assets/icons/mail.svg') ?>" alt="">
+                <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="">
                                 
 
                 <!-- MODAL QUE SALE CUANDO SE ENVÍA EL FORM CON ÉXITO -->
@@ -220,25 +220,25 @@
                 <ul>
                     <li>
                     <a href="tel:+34943123123" target="_blank">
-                        <img src="<?= asset('assets/icons/tel.svg') ?>" alt="" title="">
+                        <img src="<?= asset('assets/img/icons/tel.svg') ?>" alt="" title="">
                         <span>943 123 123</span>
                     </a>
                     </li>
                     <li>
                     <a href="mailto:aranaz@webda.eus" target="_blank">
-                        <img src="<?= asset('assets/icons/mail.svg') ?>" alt="" title="">
+                        <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="" title="">
                         <span>aranaz@webda.eus</span>
                     </a>
                     </li>
                     <li>
                     <a href="https://wa.me/628749350" target="_blank">
-                        <img src="<?= asset('assets/icons/wa.svg') ?>" alt="" title="">
+                        <img src="<?= asset('assets/img/icons/wa.svg') ?>" alt="" title="">
                         <span>628 749 350</span>
                     </a>
                     </li>
                     <li>
                     <a href="https://maps.app.goo.gl/Kh7rZM3WF1chSZSj7" target="_blank">
-                        <img src="<?= asset('assets/icons/map.svg') ?>" alt="" title="">
+                        <img src="<?= asset('assets/img/icons/map-pin-solid.svg') ?>" alt="" title="">
                         <span>C/ Juan Fermín, Juan F. Gilisagasti Kalea, 4, 1º, 20018 Donostia / San Sebastián, Gipuzkoa</span>
                     </a>
                     </li>
