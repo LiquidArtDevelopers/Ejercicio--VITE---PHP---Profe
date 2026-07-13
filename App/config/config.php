@@ -65,15 +65,15 @@ return [
                 'view' => 'equipo.php',
                 'resources' => 'src/assets/js/equipo.js',
             ],
-            '/eu/produktuak' => [
+            '/eu/zerbitzuak' => [
                 'view' => 'productos.php',
                 'resources' => 'src/assets/js/productos.js',
             ],
-            '/eu/produktua-1' => [
+            '/eu/zerbitzuak/pintorea' => [
                 'view' => 'producto1.php',
                 'resources' => 'src/assets/js/producto.js',
             ],
-            '/eu/produktua-2' => [
+            '/eu/zerbitzuak/altzari-zaharberritzailea' => [
                 'view' => 'producto2.php',
                 'resources' => 'src/assets/js/producto.js',
             ],

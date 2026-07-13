@@ -8,7 +8,7 @@
       <h2 class="footer01__title" id="footer01-menu-title-eu">Nabigazioa</h2>
       <?php
       // Se reutiliza el listado para no mantener dos menús diferentes.
-      $idSubmenu = 'footer-produktuak-eu';
+      $idSubmenu = 'footer-zerbitzuak-eu';
       require app_path('includes/eu/enlaces.php');
       ?>
     </section>

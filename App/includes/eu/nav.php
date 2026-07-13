@@ -20,7 +20,7 @@
         <?php
         // enlaces.php también se usa en el footer. Cada copia necesita un ID
         // distinto para que aria-controls apunte a un submenú único.
-        $idSubmenu = 'nav-produktuak-eu';
+        $idSubmenu = 'nav-zerbitzuak-eu';
         require app_path('includes/eu/enlaces.php');
         ?>
 

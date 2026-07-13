@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="<?= asset('favicon.svg') ?>">
-    <link rel="canonical" href="<?= url('/produktua-1') ?>">
+    <link rel="canonical" href="<?= url('/zerbitzuak/pintorea') ?>">
     <title>Producto 1</title>
     <meta name="description" content="Detalle del producto 1 de nuestra panaderia.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">

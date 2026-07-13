@@ -28,26 +28,26 @@
   <!-- Este item contiene un segundo nivel de navegación. -->
   <li class="enlaces01__item enlaces01__item--hasSubmenu" data-nav01-submenu-item>
     <div class="enlaces01__submenuHeader">
-      <a class="enlaces01__link enlaces01__link--parent" href="/eu/produktuak">
+      <a class="enlaces01__link enlaces01__link--parent" href="/eu/zerbitzuak">
         <img class="enlaces01__icon" src="<?= asset('assets/img/icons/boxes.svg') ?>" alt="">
-        <span>Produktuak</span>
+        <span>Zerbitzuak</span>
       </a>
-      <button class="enlaces01__submenuToggle" type="button" aria-controls="<?= e($idSubmenu) ?>" aria-expanded="false" aria-label="Azpimenua ireki Produktuak" data-nav01-submenu-toggle data-nav01-label-open="Azpimenua ireki" data-nav01-label-close="Azpimenua itxi" data-nav01-submenu-label="Produktuak">
+      <button class="enlaces01__submenuToggle" type="button" aria-controls="<?= e($idSubmenu) ?>" aria-expanded="false" aria-label="Azpimenua ireki Zerbitzuak" data-nav01-submenu-toggle data-nav01-label-open="Azpimenua ireki" data-nav01-label-close="Azpimenua itxi" data-nav01-submenu-label="Zerbitzuak">
         <img class="enlaces01__chevron" src="<?= asset('assets/img/icons/chevron.svg') ?>" alt="">
       </button>
     </div>
 
     <ul class="enlaces01__submenu" id="<?= e($idSubmenu) ?>" data-nav01-submenu>
       <li class="enlaces01__item">
-        <a class="enlaces01__link enlaces01__link--child" href="/eu/produktua-1">
+        <a class="enlaces01__link enlaces01__link--child" href="/eu/zerbitzuak/pintorea">
           <img class="enlaces01__icon" src="<?= asset('assets/img/icons/tag.svg') ?>" alt="">
-          <span>Produktua 1</span>
+          <span>Pintorea</span>
         </a>
       </li>
       <li class="enlaces01__item">
-        <a class="enlaces01__link enlaces01__link--child" href="/eu/produktua-2">
+        <a class="enlaces01__link enlaces01__link--child" href="/eu/zerbitzuak/altzari-zaharberritzailea">
           <img class="enlaces01__icon" src="<?= asset('assets/img/icons/spark.svg') ?>" alt="">
-          <span>Produktua 2</span>
+          <span>Altzari zaharberritzailea</span>
         </a>
       </li>
     </ul>
