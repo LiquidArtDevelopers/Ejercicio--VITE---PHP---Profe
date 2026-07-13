@@ -131,7 +131,19 @@ function asset(string $path): string
 
 function vite_manifest_path(): string
 {
-    return root_path('dist/.vite/manifest.json');
+    // El directorio publico puede llamarse dist, www, public_html, etc.
+    $publicRoot = trim((string) ($_SERVER['DOCUMENT_ROOT'] ?? ''));
+
+    if ($publicRoot === '') {
+        $frontController = (string) ($_SERVER['SCRIPT_FILENAME'] ?? '');
+        $publicRoot = $frontController !== '' ? dirname($frontController) : root_path();
+    }
+
+    return rtrim($publicRoot, '/\\')
+        . DIRECTORY_SEPARATOR
+        . '.vite'
+        . DIRECTORY_SEPARATOR
+        . 'manifest.json';
 }
 
 function vite_collect_css(array $manifest, array $chunk, array &$css): void
