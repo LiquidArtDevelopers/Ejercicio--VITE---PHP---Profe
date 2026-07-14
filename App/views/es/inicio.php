@@ -15,12 +15,12 @@
     <?php require app_path('includes/es/nav.php'); ?>
 
     <header class="header01">
-      <img class="header01__media" src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
+      <img class="header01__media" src="<?= asset('assets/img/views/header-patxi-pintor-restaurador-2560.avif') ?>" alt="Escena de Matrix">
       <div class="header01__content">
         <p class="header01__eyebrow">Header 01</p>
-        <h1>Showroom de resources</h1>
+        <h1>Patxi pintor y restaurador de muebles en Donostialdea</h1>
         <p class="header01__text">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
-        <a href="#showroom-recursos" class="boton">Ver recursos</a>
+        <a href="#showroom-recursos" class="boton">Contactar</a>
       </div>
     </header>
 
@@ -30,8 +30,11 @@
         <!-- Sección de Presentación de la empresa -->
         <!-- Art14 -->
         <article class="art14">
-          <div class="content">
-            <h2>Presentación de la empresa</h2>
+          <div class="content">            
+            <div class="h2Especial">
+                <span></span>
+                <h2>Presentación de la empresa</h2>
+            </div>
             <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Agent Smith recusandae Zion, dum machinae architecto mundum regunt et Trinity viam demonstrat.</p>
             <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
           </div>
@@ -39,8 +42,11 @@
       </section>
 
       <section>
-        <!-- sección de servicios -->
-        <h2>Nuestros servicios</h2>
+        <!-- sección de servicios -->        
+        <div class="h2Especial">
+            <span></span>
+            <h2>Nuestros servicios</h2>
+        </div>
 
         <!-- Artículo 13-->
         <!-- Servicio de pintor -->
@@ -59,7 +65,7 @@
                 src="<?= asset('assets/img/test/dummy_1200.avif') ?>"          
             >
             <div>
-                <h3>servicio de pintor</h3>
+                <h3>Pintor</h3>
                 <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
                 <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis et Zion libertatem defendit.</p>
                 <a href="#" class="boton">CTA</a>
@@ -94,8 +100,8 @@
 
       <section>
         <!-- artForm02 ajax -->
-        <article class="artForm02">          
-
+        <article class="artForm02"> 
+            
             <h2>Contacta con nosotros</h2>
             <div>
                 <div class="contenedor-form">
