@@ -48,9 +48,11 @@
             <h2>Nuestros servicios</h2>
         </div>
 
+        
         <!-- Artículo 13-->
         <!-- Servicio de pintor -->
         <article class="art13">
+
             <img
                 alt="" 
                 title=""
