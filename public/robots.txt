@@ -1,6 +1,9 @@
-# Cambia https://www.ejemplo.com por el dominio real en produccion.
+# Se permite rastrear la web publica y se bloquean las rutas tecnicas.
 User-agent: *
 Allow: /
 Disallow: /showroom
+Disallow: /app/
+Disallow: /es/404
+Disallow: /eu/404
 
-Sitemap: https://www.ejemplo.com/sitemap.xml
+Sitemap: https://cw-profe.webda.eus/sitemap.xml

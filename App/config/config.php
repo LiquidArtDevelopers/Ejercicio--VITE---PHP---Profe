@@ -53,18 +53,6 @@ return [
                 'view' => 'equipo.php',
                 'resources' => 'src/assets/js/equipo.js',
             ],
-            '/eu/zerbitzuak' => [
-                'view' => 'productos.php',
-                'resources' => 'src/assets/js/productos.js',
-            ],
-            '/eu/zerbitzuak/pintorea' => [
-                'view' => 'producto1.php',
-                'resources' => 'src/assets/js/producto.js',
-            ],
-            '/eu/zerbitzuak/altzari-zaharberritzailea' => [
-                'view' => 'producto2.php',
-                'resources' => 'src/assets/js/producto.js',
-            ],
             '/eu/lege-oharra' => [
                 'view' => 'legal.php',
                 'resources' => 'src/assets/js/legal.js',
