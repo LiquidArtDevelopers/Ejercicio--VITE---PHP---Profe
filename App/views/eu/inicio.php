@@ -1,11 +1,26 @@
 <!doctype html>
-<html lang="<?= e($lang ?? env('LANG_DEFAULT', 'eu')) ?>">
+<html lang="eu">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="<?= asset('favicon.svg') ?>">
-    <link rel="canonical" href="<?= url('/') ?>">
-    <title>Nuestra panaderia</title>
-    <meta name="description" content="Panaderia y pasteleria artesana con panes, bolleria y productos recien hechos.">
+    <link rel="canonical" href="<?= e(app_url('/eu')) ?>">
+    <link rel="alternate" hreflang="es" href="<?= e(app_url('/es')) ?>">
+    <link rel="alternate" hreflang="eu" href="<?= e(app_url('/eu')) ?>">
+    <link rel="alternate" hreflang="x-default" href="<?= e(app_url('/es')) ?>">
+    <title>Patxi, Donostialdeko margolaria eta altzari-zaharberritzailea</title>
+    <meta name="description" content="Barruko eta kanpoko pintura eta altzarien zaharberritzea, zuzeneko arretarekin Usurbilen, Donostialdean eta inguruko herrietan. Azaldu zure proiektua.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="eu_ES">
+    <meta property="og:site_name" content="Patxi">
+    <meta property="og:title" content="Patxi, Donostialdeko margolaria eta altzari-zaharberritzailea">
+    <meta property="og:description" content="Pintura eta altzarien zaharberritzea, zuzeneko arretarekin Usurbilen eta Donostialdean.">
+    <meta property="og:url" content="<?= e(app_url('/eu')) ?>">
+    <meta property="og:image" content="<?= e(app_url('assets/img/views/pintor-rodillo-interior-1500.avif')) ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patxi, Donostialdeko margolaria eta zaharberritzailea">
+    <meta name="twitter:description" content="Berritu zure espazioak edo berreskuratu altzari bat, zerbitzu hurbil eta profesionalarekin.">
+    <meta name="twitter:image" content="<?= e(app_url('assets/img/views/pintor-rodillo-interior-1500.avif')) ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
@@ -13,250 +28,207 @@
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
 
-    
     <header class="header01">
-      <img class="header01__media" src="<?= asset('assets/img/views/header-patxi-pintor-restaurador-2560.avif') ?>" alt="Escena de Matrix">
+      <img
+        class="header01__media"
+        src="<?= asset('assets/img/views/pintor-rodillo-interior-1500.avif') ?>"
+        srcset="<?= asset('assets/img/views/pintor-rodillo-interior-900.avif') ?> 900w, <?= asset('assets/img/views/pintor-rodillo-interior-1500.avif') ?> 1500w, <?= asset('assets/img/views/pintor-rodillo-interior-2560.avif') ?> 2560w"
+        sizes="100vw"
+        width="2560"
+        height="1707"
+        alt="Profesional bat barruko horma bat arrabolarekin margotzen"
+        title="Barrualdeko pintura-lan profesionala"
+        fetchpriority="high"
+        decoding="async"
+      >
       <div class="header01__content">
-        <p class="header01__eyebrow">Header 01</p>
-        <h1>Patxi pintor y restaurador de muebles en Donostialdea</h1>
-        <p class="header01__text">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
-        <a href="/eu/kontaktua" class="boton">Contactar</a>
+        <p class="header01__eyebrow">Pintura eta zaharberritzea · Usurbil eta Donostialdea</p>
+        <h1>Patxi, Donostialdeko margolaria eta altzari-zaharberritzailea</h1>
+        <p class="header01__text">Berritu etxebizitza, komunitate edo negozio txiki bat, edo berreskuratu gordetzen jarraitu nahi duzun altzaria. Tratu zuzena eta enkargu bakoitzak benetan behar duenaren arabera planteatutako lana.</p>
+        <a href="/eu/kontaktua" class="boton" title="Patxiri aurrekontua eskatu">Aurrekontua eskatu</a>
       </div>
     </header>
 
     <main>
-
-      <section>
-        <!-- Sección de Presentación de la empresa -->
-        <!-- Art14 -->
+      <section aria-labelledby="inicio-presentacion-eu">
         <article class="art14">
-          <div class="content">            
+          <div class="content">
             <div class="h2Especial">
-                <span></span>
-                <h2>Presentación de la empresa</h2>
+              <span aria-hidden="true"></span>
+              <h2 id="inicio-presentacion-eu">Espazioak eta altzariak berritzeko profesional bakarra</h2>
             </div>
-            <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem. Agent Smith recusandae Zion, dum machinae architecto mundum regunt et Trinity viam demonstrat.</p>
-            <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix">
+            <p>Usurbildik, Patxik Donostialdean eta inguruko herrietan egiten ditu lanak. Eskaintzak elkarren osagarri diren bi lanbide biltzen ditu: espazioak eguneratzeko <strong>barrualdeko eta kanpoaldeko pintura</strong>, eta balio praktikoa edo pertsonala duten egurrezko piezak berreskuratzeko <strong>altzarien zaharberritzea</strong>.</p>
+            <p>Proiektu bakoitza espazioaren erabilera edo piezaren egoera ulertuz hasten da. Horri esker, prestaketa, akabera eta lanaren irismena modu egokian baloratu, aukerak argi azaldu eta zure kasuarekin bat ez datozen konponbide orokorrak saihestu daitezke.</p>
+            <img
+              src="<?= asset('assets/img/views/interior-renovado-1500.avif') ?>"
+              srcset="<?= asset('assets/img/views/interior-renovado-900.avif') ?> 900w, <?= asset('assets/img/views/interior-renovado-1500.avif') ?> 1500w"
+              sizes="(max-width: 800px) 90vw, 60vw"
+              width="1500"
+              height="1000"
+              alt="Tonu argi eta berdez margotutako hormak dituen barrualde argitsua"
+              title="Pinturaren bidez berritutako barrualde baten adibidea"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </article>
       </section>
 
-      <section>
-        <!-- sección de servicios -->        
+      <section aria-labelledby="inicio-servicios-eu">
         <div class="h2Especial">
-            <span></span>
-            <h2>Nuestros servicios</h2>
+          <span aria-hidden="true"></span>
+          <h2 id="inicio-servicios-eu">Zure espazioa hasieratik amaierara zaintzeko zerbitzuak</h2>
         </div>
 
-        <!-- Artículo 13-->
-        <!-- Servicio de pintor -->
         <article class="art13">
-            <img
-                alt="" 
-                title=""
-                srcset="
-                <?= asset('assets/img/test/dummy_1800.avif') ?> 1800w,
-                <?= asset('assets/img/test/dummy_1200.avif') ?> 1200w
-                "
-                sizes="
-                (max-width:800px) 900px,
-                1500px
-                "
-                src="<?= asset('assets/img/test/dummy_1200.avif') ?>"          
-            >
-            <div>
-                <h3>Pintor</h3>
-                <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
-                <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Agent Smith erroribus reiciendis et Zion libertatem defendit.</p>
-                <a href="#" class="boton">CTA</a>
-            </div>
+          <img
+            src="<?= asset('assets/img/views/pintura-pared-color-1500.avif') ?>"
+            srcset="<?= asset('assets/img/views/pintura-pared-color-900.avif') ?> 900w, <?= asset('assets/img/views/pintura-pared-color-1500.avif') ?> 1500w"
+            sizes="(max-width: 1199px) 90vw, 48vw"
+            width="1500"
+            height="1001"
+            alt="Margolari bat barruko horma bat pintura horiz estaltzen"
+            title="Barruko horma batean koloretako pintura aplikatzen"
+            loading="lazy"
+            decoding="async"
+          >
+          <div>
+            <h3>Barrualdeko eta kanpoaldeko pintura-lanak</h3>
+            <p>Etxebizitzak, atariak, eremu komunak eta lokal txikiak margotzeko zerbitzua. Akabera aplikatu aurretik, euskarria eta behar duen prestaketa baloratzen dira, gainazal uniformea lortzeko.</p>
+            <p>Gela baten giroa aldatu, higiezin bat eguneratu edo akats txikiak dituzten hormak txukundu nahi badituzu, margolari-zerbitzua kontsulta dezakezu eta buruan duzun emaitza azaldu.</p>
+            <a href="/eu/zerbitzuak/margolaria" class="boton" title="Etxe-margolari profesionalaren zerbitzua ikusi">Pintura-zerbitzua ikusi</a>
+          </div>
         </article>
 
-        <!-- Artículo 13 invertido -->
-        <!-- servicio de restaurador -->
         <article class="art13 upsidedown">
+          <img
+            src="<?= asset('assets/img/views/reparacion-mueble-taller-1500.avif') ?>"
+            srcset="<?= asset('assets/img/views/reparacion-mueble-taller-900.avif') ?> 900w, <?= asset('assets/img/views/reparacion-mueble-taller-1500.avif') ?> 1500w"
+            sizes="(max-width: 1199px) 90vw, 48vw"
+            width="1500"
+            height="1000"
+            alt="Profesional bat tailerrean egurrezko altzari baten egitura doitzen"
+            title="Egurrezko altzari baten berrikuspena eta konponketa"
+            loading="lazy"
+            decoding="async"
+          >
+          <div>
+            <h3>Altzarien eta egurrezko piezen zaharberritzea</h3>
+            <p>Bigarren bizitza merezi duten altzari zaharrak edo eguneroko erabilerakoak berreskuratzea. Lana higadura, egonkortasuna, aurreko akabera eta piezak izango duen erabilera aztertu ondoren erabakitzen da.</p>
+            <p>Helburua ez da haren historia ezabatzea, baizik eta itxura eta erabilgarritasuna hobetzea, altzariaren izaera errespetatuz eta bilatzen duzun emaitza zurekin adostuz.</p>
+            <a href="/eu/zerbitzuak/altzarien-zaharberritzea" class="boton" title="Altzariak zaharberritzeko zerbitzua ikusi">Zaharberritzea ikusi</a>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="inicio-forma-trabajo-eu">
+        <article class="art14">
+          <div class="content">
+            <div class="h2Especial">
+              <span aria-hidden="true"></span>
+              <h2 id="inicio-forma-trabajo-eu">Arreta hurbila eta erabaki argiak</h2>
+            </div>
+            <p>Emaitza ona pintura-potoa ireki edo altzari batean esku hartu aurretik hasten da. Patxik lortu nahi duzuna entzuten du, abiapuntua aztertzen du eta ulertzeko erraza den konponbidea planteatzen du. Materialak, koloreak, akaberak eta lehentasunak zuzenean komentatzeko solaskide bakarra izango duzu.</p>
+            <p>Lan-eremua Usurbilen, Donostialdean eta inguruko herrietan biltzen da. Zure kokapena edo enkargua egokia den zalantzarik baduzu, erabili formularioa: azaldu lana, eta kontsultaren lehen balorazioa jasoko duzu.</p>
             <img
-                alt="" 
-                title=""
-                srcset="
-                <?= asset('assets/img/test/dummy_1800.avif') ?> 1800w,
-                <?= asset('assets/img/test/dummy_1200.avif') ?> 1200w
-                "
-                sizes="
-                (max-width:800px) 900px,
-                1500px
-                "
-                src="<?= asset('assets/img/test/dummy_1200.avif') ?>"          
+              src="<?= asset('assets/img/views/pintura-brocha-puerta-1500.avif') ?>"
+              srcset="<?= asset('assets/img/views/pintura-brocha-puerta-900.avif') ?> 900w, <?= asset('assets/img/views/pintura-brocha-puerta-1500.avif') ?> 1500w"
+              sizes="(max-width: 800px) 90vw, 60vw"
+              width="1500"
+              height="1000"
+              alt="Esku bat ate baten markoan pintura zuria brotxaz ematen"
+              title="Barruko zurgintzan brotxaz egindako pintura-xehetasuna"
+              loading="lazy"
+              decoding="async"
             >
-            <div>
-                <h3>Restaurador de muebles</h3>
-                <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Morpheus quaerat optionem, pillula rubra aperiam systema et realitatem.</p>
-                <p>Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
-                <a href="#" class="boton">CTA</a>
-            </div>
-        </article>
-
-      </section>
-
-      <section>
-        <!-- artForm02 ajax -->
-        <article class="artForm02"> 
-            
-            <h2>Contacta con nosotros</h2>
-            <div>
-                <div class="contenedor-form">
-                
-                <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="">
-                                
-
-                <!-- MODAL QUE SALE CUANDO SE ENVÍA EL FORM CON ÉXITO -->
-                <div id="modal_envio">
-                    <!-- nuestro modal con html y css -->
-                    <h3 id="h3_modal_envio">Matrix ipsum modal</h3>
-                    <p id="p_modal_envio">Matrix ipsum dolor sit amet, consectetur adipisicing elit. Neo eligendi veritatis codicem et simulacrum.</p>
-                    <div class="boton" id="boton_modal_envio">Escribir otra consulta</div>
-                </div>
-
-                <form id="idForAjax" action="/app/artForm02" method="post">
-                    
-                    <p class="error" id="errorForm02"></p>
-
-                    <!-- nombre -->
-                    <label for="nombreAjax">Nombre *</label>
-                    <input type="text" id="nombreAjax" name="nombre" placeholder="Escribe aquí tu nombre *">
-
-                    <!-- teléfono -->
-                    <label for="telefonoAjax">Teléfono *</label>
-                    <input type="tel" id="telefonoAjax" name="telefono" placeholder="Escribe aquí tu teléfono *">
-
-                    <!-- Correo -->
-                    <label for="emailAjax">Correo Electrónico</label>
-                    <input type="email" id="emailAjax" name="email" placeholder="Escribe aquí tu correo electrónico">
-
-                    <!-- Mensaje -->
-                    <label for="mensajeAjax">Escribe tu mensaje</label>
-                    <textarea name="mensaje" id="mensajeAjax" placeholder="Escribe aquí tu mensaje"></textarea>
-
-                    <!-- términos -->
-                    <div class="horizontal">
-                    <label for="terminosAjax">Aceptar términos y condiciones de privacidad</label>
-                    <input type="checkbox" name="terminos" id="terminosAjax">
-                    </div>
-                    
-
-                    <!-- captcha -->
-                    <label for="respuesta">Resuelve</label>
-                    <div class="horizontal">
-                    <span id="num1ajax"></span>
-                    <span id="operadorajax"></span>
-                    <span id="num2ajax"></span>
-                    <input type="text" name="respUser" id="respuestaajax" placeholder="Respuesta" autocomplete="off">
-                    <input type="hidden" name="respSystem" id="respSystemajax" value="">
-                    </div>
-
-                    <input type="hidden" name="url" value="<?= e($url) ?>">
-                    <input type="hidden" name="lang" value="<?= e($lang) ?>">
-
-                    <input type="submit" class="boton" value="Enviar" id="botonEnviarAjax">
-                </form>
-                
-                <div class="moduloLoader01" id="moduloLoader01">
-                    <!-- <svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <circle fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/>
-                    <line fill="none" stroke-linecap="round" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5">
-                        <animateTransform 
-                            attributeName="transform" 
-                            dur="2s"
-                            type="rotate"
-                            from="0 50 50"
-                            to="360 50 50"
-                            repeatCount="indefinite" />
-                    </line>
-                    <line fill="none" stroke-linecap="round" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74">
-                        <animateTransform 
-                            attributeName="transform" 
-                            dur="15s"
-                            type="rotate"
-                            from="0 50 50"
-                            to="360 50 50"
-                            repeatCount="indefinite" />
-                    </line>
-                    </svg> -->
-                    <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <path fill="#000000" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
-                        c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
-                            <animateTransform 
-                            attributeName="transform" 
-                            attributeType="XML" 
-                            type="rotate"
-                            dur="2s" 
-                            from="0 50 50"
-                            to="360 50 50" 
-                            repeatCount="indefinite" />
-                        </path>
-                    <path fill="#000000" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
-                        c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
-                            <animateTransform 
-                            attributeName="transform" 
-                            attributeType="XML" 
-                            type="rotate"
-                            dur="1s" 
-                            from="0 50 50"
-                            to="-360 50 50" 
-                            repeatCount="indefinite" />
-                        </path>
-                    <path fill="#000000" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
-                        L82,35.7z">
-                            <animateTransform 
-                            attributeName="transform" 
-                            attributeType="XML" 
-                            type="rotate"
-                            dur="2s" 
-                            from="0 50 50"
-                            to="360 50 50" 
-                            repeatCount="indefinite" />
-                        </path>
-                    </svg>
-                </div>
-
-                </div>
-                <div class="contenedor-info">
-                <ul>
-                    <li>
-                    <a href="tel:+34943123123" target="_blank">
-                        <img src="<?= asset('assets/img/icons/tel.svg') ?>" alt="" title="">
-                        <span>943 123 123</span>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="mailto:aranaz@webda.eus" target="_blank">
-                        <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="" title="">
-                        <span>aranaz@webda.eus</span>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="https://wa.me/628749350" target="_blank">
-                        <img src="<?= asset('assets/img/icons/wa.svg') ?>" alt="" title="">
-                        <span>628 749 350</span>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="https://maps.app.goo.gl/Kh7rZM3WF1chSZSj7" target="_blank">
-                        <img src="<?= asset('assets/img/icons/map-pin-solid.svg') ?>" alt="" title="">
-                        <span>C/ Juan Fermín, Juan F. Gilisagasti Kalea, 4, 1º, 20018 Donostia / San Sebastián, Gipuzkoa</span>
-                    </a>
-                    </li>
-                </ul>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1886.901188915529!2d-2.0047191655624914!3d43.29790730427824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b013f0513629%3A0x57e4ff3311f619d9!2s%C3%81rea%20Escuela%20de%20Dise%C3%B1o%20y%20Nuevas%20Tecnolog%C3%ADas!5e1!3m2!1ses!2ses!4v1768584957042!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
+          </div>
         </article>
       </section>
 
+      <section aria-labelledby="inicio-contacto-eu">
+        <article class="artForm02">
+          <h2 id="inicio-contacto-eu">Azaldu zer berritu nahi duzun</h2>
+          <div>
+            <div class="contenedor-form">
+              <img src="<?= asset('assets/img/icons/mail-solid.svg') ?>" alt="" title="" aria-hidden="true">
+
+              <div id="modal_envio" aria-live="polite">
+                <h3 id="h3_modal_envio">Kontsulta bidali da</h3>
+                <p id="p_modal_envio">Zure mezua behar bezala jaso da.</p>
+                <div class="boton" id="boton_modal_envio" role="button" tabindex="0">Beste kontsulta bat idatzi</div>
+              </div>
+
+              <form id="idForAjax" action="/app/artForm02" method="post" aria-label="Aurrekontua eskatzeko formularioa">
+                <p class="error" id="errorForm02" aria-live="assertive"></p>
+
+                <label for="nombreAjax">Izena *</label>
+                <input type="text" id="nombreAjax" name="nombre" placeholder="Idatzi zure izena" minlength="3" maxlength="40" autocomplete="name" required>
+
+                <label for="telefonoAjax">Telefonoa *</label>
+                <input type="tel" id="telefonoAjax" name="telefono" placeholder="Adierazi harremanetarako telefonoa" autocomplete="tel" required>
+
+                <label for="emailAjax">Helbide elektronikoa *</label>
+                <input type="email" id="emailAjax" name="email" placeholder="Idatzi zure helbide elektronikoa" autocomplete="email" required>
+
+                <label for="mensajeAjax">Zer lan behar duzu? *</label>
+                <textarea name="mensaje" id="mensajeAjax" placeholder="Azaldu espazioa edo altzaria, haren egoera eta kokapena" minlength="4" maxlength="200" required></textarea>
+
+                <div class="horizontal">
+                  <label for="terminosAjax"><a href="/eu/lege-oharra#politica-privacidad" title="Pribatutasun-politika irakurri">Pribatutasun-politika</a> onartzen dut *</label>
+                  <input type="checkbox" name="terminos" id="terminosAjax" required>
+                </div>
+
+                <label for="respuestaajax">Ebatzi eragiketa hau *</label>
+                <div class="horizontal">
+                  <span id="num1ajax"></span>
+                  <span id="operadorajax"></span>
+                  <span id="num2ajax"></span>
+                  <input type="text" name="respUser" id="respuestaajax" placeholder="Emaitza" inputmode="numeric" autocomplete="off" required>
+                  <input type="hidden" name="respSystem" id="respSystemajax" value="">
+                </div>
+
+                <input type="hidden" name="url" value="<?= e($url) ?>">
+                <input type="hidden" name="lang" value="<?= e($lang) ?>">
+                <input type="submit" class="boton" value="Kontsulta bidali" id="botonEnviarAjax" title="Kontsulta Patxiri bidali">
+              </form>
+
+              <div class="moduloLoader01" id="moduloLoader01" role="status" aria-label="Kontsulta bidaltzen">
+                <svg viewBox="0 0 50 50" aria-hidden="true">
+                  <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-dasharray="90 40">
+                    <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite" />
+                  </circle>
+                </svg>
+              </div>
+            </div>
+
+            <div class="contenedor-info">
+              <h3>Idatzi aurretik lagungarria den informazioa</h3>
+              <p>Adierazi pintura edo zaharberritzea den, lana non dagoen eta zer aldaketa lortu nahi duzun. Mezua zenbat eta zehatzagoa izan, orduan eta hobeto bideratu ahal izango da lehen erantzuna.</p>
+              <ul>
+                <li>
+                  <a href="/eu/zerbitzuak/margolaria" title="Eskuragarri dauden pintura-lanak kontsultatu">
+                    <img src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="" title="" aria-hidden="true">
+                    <span>Barrualdeko eta kanpoaldeko pintura</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/eu/zerbitzuak/altzarien-zaharberritzea" title="Altzariak zaharberritzeko zerbitzua kontsultatu">
+                    <img src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="" title="" aria-hidden="true">
+                    <span>Altzarien zaharberritzea</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/eu/kontaktua" title="Kontaktu eta aurrekontu orrira joan">
+                    <img src="<?= asset('assets/img/icons/location.svg') ?>" alt="" title="" aria-hidden="true">
+                    <span>Usurbil, Donostialdea eta inguruak</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
     </main>
-
 
     <?php require app_path('includes/eu/footer.php'); ?>
   </body>

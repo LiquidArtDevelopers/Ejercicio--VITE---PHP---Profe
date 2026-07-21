@@ -1,61 +1,59 @@
 <?php
-// Listado compartido por el nav y el footer en castellano. Si se crea una
-// página nueva, su href debe coincidir con una ruta de App/config/config.php.
-// $idSubmenu llega desde nav.php o footer.php para evitar IDs HTML duplicados.
+// Nabigazioan eta footerrean berrerabiltzen den euskarazko esteka-zerrenda.
+// Href bakoitza App/config/config.php fitxategiko bide batekin bat dator.
 ?>
 <ul class="enlaces01">
   <li class="enlaces01__item">
-    <a class="enlaces01__link" href="/eu">
-      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/home.svg') ?>" alt="">
+    <a class="enlaces01__link" href="/eu" title="Patxiren hasierako orrira joan">
+      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/home.svg') ?>" alt="" title="" aria-hidden="true">
       <span>Hasiera</span>
     </a>
   </li>
 
   <li class="enlaces01__item">
-    <a class="enlaces01__link" href="/eu/kontaktua">
-      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/email.svg') ?>" alt="">
+    <a class="enlaces01__link" href="/eu/kontaktua" title="Patxirekin harremanetan jarri eta aurrekontua eskatu">
+      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/email.svg') ?>" alt="" title="" aria-hidden="true">
       <span>Kontaktua</span>
     </a>
   </li>
 
   <li class="enlaces01__item">
-    <a class="enlaces01__link" href="/es/quienes-somos">
-      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/persons.svg') ?>" alt="">
-      <span>Quiénes somos</span>
+    <a class="enlaces01__link" href="/eu/nortzuk-gara" title="Patxi eta haren lan egiteko modua ezagutu">
+      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/persons.svg') ?>" alt="" title="" aria-hidden="true">
+      <span>Nor naiz</span>
     </a>
   </li>
 
-  <!-- Este item contiene un segundo nivel de navegación. -->
   <li class="enlaces01__item enlaces01__item--hasSubmenu" data-nav01-submenu-item>
     <div class="enlaces01__submenuHeader">
-      <a class="enlaces01__link enlaces01__link--parent" href="/es/servicios">
-        <img class="enlaces01__icon" src="<?= asset('assets/img/icons/brush.svg') ?>" alt="">
-        <span>Servicios</span>
+      <a class="enlaces01__link enlaces01__link--parent" href="/eu/zerbitzuak" title="Pintura eta altzari-zaharberritze zerbitzu guztiak ikusi">
+        <img class="enlaces01__icon" src="<?= asset('assets/img/icons/brush.svg') ?>" alt="" title="" aria-hidden="true">
+        <span>Zerbitzuak</span>
       </a>
-      <button class="enlaces01__submenuToggle" type="button" aria-controls="<?= e($idSubmenu) ?>" aria-expanded="false" aria-label="Abrir submenú Servicios" data-nav01-submenu-toggle data-nav01-label-open="Abrir submenú" data-nav01-label-close="Cerrar submenú" data-nav01-submenu-label="Servicios">
-        <img class="enlaces01__chevron" src="<?= asset('assets/img/icons/arrow-down.svg') ?>" alt="">
+      <button class="enlaces01__submenuToggle" type="button" aria-controls="<?= e($idSubmenu) ?>" aria-expanded="false" aria-label="Zerbitzuen azpimenua ireki" title="Zerbitzuen azpimenua ireki" data-nav01-submenu-toggle data-nav01-label-open="Azpimenua ireki" data-nav01-label-close="Azpimenua itxi" data-nav01-submenu-label="Zerbitzuak">
+        <img class="enlaces01__chevron" src="<?= asset('assets/img/icons/arrow-down.svg') ?>" alt="" title="" aria-hidden="true">
       </button>
     </div>
 
     <ul class="enlaces01__submenu" id="<?= e($idSubmenu) ?>" data-nav01-submenu>
       <li class="enlaces01__item">
-        <a class="enlaces01__link enlaces01__link--child" href="/es/servicios/pintor">
-          <img class="enlaces01__icon" src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="">
-          <span>Pintor</span>
+        <a class="enlaces01__link enlaces01__link--child" href="/eu/zerbitzuak/margolaria" title="Etxe-margolari zerbitzua Usurbilen eta Donostialdean">
+          <img class="enlaces01__icon" src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="" title="" aria-hidden="true">
+          <span>Margolaria</span>
         </a>
       </li>
       <li class="enlaces01__item">
-        <a class="enlaces01__link enlaces01__link--child" href="/es/servicios/restaurador-muebles">
-          <img class="enlaces01__icon" src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="">
-          <span>Restaurador de muebles</span>
+        <a class="enlaces01__link enlaces01__link--child" href="/eu/zerbitzuak/altzarien-zaharberritzea" title="Altzariak zaharberritzeko zerbitzua Usurbilen eta Donostialdean">
+          <img class="enlaces01__icon" src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="" title="" aria-hidden="true">
+          <span>Altzarien zaharberritzea</span>
         </a>
       </li>
     </ul>
   </li>
 
   <li class="enlaces01__item">
-    <a class="enlaces01__link" href="/showroom">
-      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/grid.svg') ?>" alt="">
+    <a class="enlaces01__link" href="/showroom" title="Proiektuaren baliabideen showrooma ikusi">
+      <img class="enlaces01__icon" src="<?= asset('assets/img/icons/grid.svg') ?>" alt="" title="" aria-hidden="true">
       <span>Showroom</span>
     </a>
   </li>

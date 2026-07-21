@@ -22,6 +22,7 @@ $bordeRadio: 10px;
     >:nth-child(1){
         width: 100%;
         text-align: left;
+        color: c.$color02;
     }
     >div{
         // background-color: aliceblue;
@@ -98,6 +99,10 @@ $bordeRadio: 10px;
                 label{
                     margin-top: 0.5rem;
                     font-size: $tamanoFuente;
+                    a{
+                        color: c.$color01;
+                        text-decoration: underline;
+                    }
                 }
                 .boton{
                     // margin: 0 auto;
@@ -179,7 +184,7 @@ $bordeRadio: 10px;
                         filter: c.$color03svg;
                     }
                     >span{                        
-                        color: c.$color03;
+                        color: c.$color02;
                         font-size: $tamanoFuente
                     }
                 }

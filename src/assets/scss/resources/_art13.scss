@@ -52,6 +52,11 @@
         @media only screen and (min-width:c.$desktop){
             width: 40%;
         }
+        >h2{
+            color: c.$color02;
+            font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+            letter-spacing: 2px;
+        }
         >:nth-child(1){
             order: 1;
         }

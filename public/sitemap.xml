@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Solo se incluyen las rutas publicas e indexables de App/config/config.php. -->
+<!-- Rutas públicas e indexables definidas en App/config/config.php. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cw-profe.webda.eus/es</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://cw-profe.webda.eus/es/contacto</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://cw-profe.webda.eus/es/servicios</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cw-profe.webda.eus/es/servicios/pintor</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cw-profe.webda.eus/es/servicios/restaurador-muebles</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cw-profe.webda.eus/es/quienes-somos</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cw-profe.webda.eus/es/contacto</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cw-profe.webda.eus/es/legal</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://cw-profe.webda.eus/eu</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://cw-profe.webda.eus/eu/kontaktua</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://cw-profe.webda.eus/eu/zerbitzuak</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cw-profe.webda.eus/eu/zerbitzuak/margolaria</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cw-profe.webda.eus/eu/zerbitzuak/altzarien-zaharberritzea</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cw-profe.webda.eus/eu/nortzuk-gara</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cw-profe.webda.eus/eu/lege-oharra</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://cw-profe.webda.eus/eu/kontaktua</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

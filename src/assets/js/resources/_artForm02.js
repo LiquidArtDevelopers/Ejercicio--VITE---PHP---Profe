@@ -2,6 +2,22 @@ const formulario = document.querySelector("#idForAjax")
 
 // Este recurso tambien se carga en vistas sin formulario, como algunas traducciones.
 if (formulario) {
+    const esEuskera = formulario.querySelector('[name="lang"]')?.value === "eu"
+    const textos = esEuskera
+        ? {
+            jsonInvalido: "Zerbitzariaren erantzuna ezin izan da prozesatu.",
+            envioFallido: "Ezin izan da formularioa bidali.",
+            conexionFallida: "Ezin izan da zerbitzariarekin konektatu.",
+            tiempoAgotado: "Zerbitzariak denbora gehiegi behar izan du erantzuteko. Saiatu berriro.",
+            confirmacion: (nombre) => `Zure kontsulta jaso dugu, ${nombre}. Ahal bezain laster erantzungo dizugu.`,
+        }
+        : {
+            jsonInvalido: "Ha ocurrido un error al procesar la respuesta del servidor.",
+            envioFallido: "No se ha podido enviar el formulario.",
+            conexionFallida: "No se ha podido conectar con el servidor.",
+            tiempoAgotado: "El servidor ha tardado demasiado en responder. Inténtalo de nuevo.",
+            confirmacion: (nombre) => `Hemos recibido tu consulta, ${nombre}. Te responderemos lo antes posible.`,
+        }
     const botonEnviar = formulario.querySelector("#botonEnviarAjax")
     const controles = formulario.querySelectorAll("input, textarea, button")
     const errorFormulario = document.querySelector("#errorForm02")
@@ -40,13 +56,13 @@ if (formulario) {
                 respuesta = JSON.parse(xmlhttp.responseText)
             } catch (error) {
                 console.error("El servidor no ha devuelto un JSON valido.", error)
-                mostrarError("Ha ocurrido un error al procesar la respuesta del servidor.")
+                mostrarError(textos.jsonInvalido)
                 cambiarEstadoFormulario(false)
                 return
             }
 
             if (xmlhttp.status < 200 || xmlhttp.status >= 300) {
-                mostrarError(respuesta.mensaje || "No se ha podido enviar el formulario.")
+                mostrarError(respuesta.mensaje || textos.envioFallido)
                 cambiarEstadoFormulario(false)
                 return
             }
@@ -61,16 +77,16 @@ if (formulario) {
             formulario.style.display = "none"
             modalEnvio.style.display = "flex"
             tituloModal.innerText = respuesta.mensaje
-            textoModal.innerText = `Hemos recibido tu consulta, ${respuesta.param3}. En breve te contestaremos.`
+            textoModal.innerText = textos.confirmacion(respuesta.param3)
         }
 
         xmlhttp.onerror = function () {
-            mostrarError("No se ha podido conectar con el servidor.")
+            mostrarError(textos.conexionFallida)
             cambiarEstadoFormulario(false)
         }
 
         xmlhttp.ontimeout = function () {
-            mostrarError("El servidor ha tardado demasiado en responder. Intentalo de nuevo.")
+            mostrarError(textos.tiempoAgotado)
             cambiarEstadoFormulario(false)
         }
 
