@@ -89,6 +89,8 @@ function enviarRespuestaAsincrona(string $mensaje, bool $fallo, string $param3):
     exit;
 }
 
+
+
 // Construye el mapa idioma => ruta equivalente segun la posicion definida en config.php.
 function rutas_homologas(?string $rutaActual): array
 {
