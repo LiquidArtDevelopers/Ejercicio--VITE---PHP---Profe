@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
@@ -174,7 +175,7 @@
                 <div class="boton" id="boton_modal_envio" role="button" tabindex="0">Beste kontsulta bat idatzi</div>
               </div>
 
-              <form id="idForAjax" action="/app/artForm02" method="post" aria-label="Aurrekontua eskatzeko formularioa">
+              <form id="idForAjax" action="<?= e(app_url('/app/artForm02')) ?>" method="post" aria-label="Aurrekontua eskatzeko formularioa">
                 <p class="error" id="errorForm02" aria-live="assertive"></p>
 
                 <label for="nombreAjax">Izena *</label>
@@ -190,7 +191,7 @@
                 <textarea name="mensaje" id="mensajeAjax" placeholder="Azaldu espazioa edo altzaria, haren egoera eta kokapena" minlength="4" maxlength="200" required></textarea>
 
                 <div class="horizontal">
-                  <label for="terminosAjax"><a href="/eu/lege-oharra#politica-privacidad" title="Pribatutasun-politika irakurri">Pribatutasun-politika</a> onartzen dut *</label>
+                  <label for="terminosAjax"><a href="<?= url('/eu/lege-oharra#politica-privacidad') ?>" title="Pribatutasun-politika irakurri">Pribatutasun-politika</a> onartzen dut *</label>
                   <input type="checkbox" name="terminos" id="terminosAjax" required>
                 </div>
 
@@ -222,19 +223,19 @@
               <p>Aplikazioei eta prozesuari buruzko informazio gehiago nahi baduzu, berrikusi dagokion zerbitzuaren fitxa. Ondoren, itzuli formulariora eta laburbildu zure kasuaren funtsezko datuak.</p>
               <ul>
                 <li>
-                  <a href="/eu/zerbitzuak/margolaria" title="Margolari-zerbitzuaren informazioa irakurri">
+                  <a href="<?= url('/eu/zerbitzuak/margolaria') ?>" title="Margolari-zerbitzuaren informazioa irakurri">
                     <img src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Margolari-zerbitzua</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/eu/zerbitzuak/altzarien-zaharberritzea" title="Altzarien zaharberritzeari buruzko informazioa irakurri">
+                  <a href="<?= url('/eu/zerbitzuak/altzarien-zaharberritzea') ?>" title="Altzarien zaharberritzeari buruzko informazioa irakurri">
                     <img src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Altzarien zaharberritzea</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/eu/nortzuk-gara" title="Patxiren lan egiteko modua ezagutu">
+                  <a href="<?= url('/eu/nortzuk-gara') ?>" title="Patxiren lan egiteko modua ezagutu">
                     <img src="<?= asset('assets/img/icons/person.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Patxi ezagutu</span>
                   </a>

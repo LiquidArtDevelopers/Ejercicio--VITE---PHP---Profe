@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header01__eyebrow">Pintura y restauración · Usurbil y Donostialdea</p>
         <h1>Patxi, pintor y restaurador de muebles en Donostialdea</h1>
         <p class="header01__text">Renueva una vivienda, una comunidad o un pequeño negocio, o recupera ese mueble que quieres seguir disfrutando. Trato directo y un trabajo planteado según lo que realmente necesita cada encargo.</p>
-        <a href="/es/contacto" class="boton" title="Pedir presupuesto a Patxi">Pedir presupuesto</a>
+        <a href="<?= url('/es/contacto') ?>" class="boton" title="Pedir presupuesto a Patxi">Pedir presupuesto</a>
       </div>
     </header>
 
@@ -96,7 +97,7 @@
             <h3>Trabajos de pintura interior y exterior</h3>
             <p>Pintura para viviendas, portales, zonas comunes y pequeños locales. Antes de aplicar el acabado se valora el soporte y la preparación que requiere para conseguir una superficie uniforme.</p>
             <p>Si buscas cambiar el ambiente de una estancia, actualizar un inmueble o sanear paredes con pequeñas imperfecciones, puedes consultar el servicio de pintor y contar qué resultado tienes en mente.</p>
-            <a href="/es/servicios/pintor" class="boton" title="Ver el servicio de pintor profesional">Ver servicio de pintura</a>
+            <a href="<?= url('/es/servicios/pintor') ?>" class="boton" title="Ver el servicio de pintor profesional">Ver servicio de pintura</a>
           </div>
         </article>
 
@@ -116,7 +117,7 @@
             <h3>Restauración de muebles y piezas de madera</h3>
             <p>Recuperación de muebles antiguos o de uso diario que merecen una segunda vida. El trabajo se decide después de revisar el desgaste, la estabilidad, el acabado existente y el uso que tendrá la pieza.</p>
             <p>La finalidad no es borrar su historia, sino mejorar su aspecto y funcionalidad respetando el carácter del mueble y acordando contigo el resultado buscado.</p>
-            <a href="/es/servicios/restaurador-muebles" class="boton" title="Ver el servicio de restauración de muebles">Ver restauración de muebles</a>
+            <a href="<?= url('/es/servicios/restaurador-muebles') ?>" class="boton" title="Ver el servicio de restauración de muebles">Ver restauración de muebles</a>
           </div>
         </article>
       </section>
@@ -158,7 +159,7 @@
                 <div class="boton" id="boton_modal_envio" role="button" tabindex="0">Escribir otra consulta</div>
               </div>
 
-              <form id="idForAjax" action="/app/artForm02" method="post" aria-label="Formulario para pedir presupuesto">
+              <form id="idForAjax" action="<?= e(app_url('/app/artForm02')) ?>" method="post" aria-label="Formulario para pedir presupuesto">
                 <p class="error" id="errorForm02" aria-live="assertive"></p>
 
                 <label for="nombreAjax">Nombre *</label>
@@ -174,7 +175,7 @@
                 <textarea name="mensaje" id="mensajeAjax" placeholder="Describe el espacio o el mueble, su estado y la zona" minlength="4" maxlength="200" required></textarea>
 
                 <div class="horizontal">
-                  <label for="terminosAjax">Acepto la <a href="/es/legal#politica-privacidad" title="Leer la política de privacidad">política de privacidad</a> *</label>
+                  <label for="terminosAjax">Acepto la <a href="<?= url('/es/legal#politica-privacidad') ?>" title="Leer la política de privacidad">política de privacidad</a> *</label>
                   <input type="checkbox" name="terminos" id="terminosAjax" required>
                 </div>
 
@@ -206,19 +207,19 @@
               <p>Indica si se trata de pintura o restauración, dónde se encuentra el trabajo y qué cambio te gustaría conseguir. Cuanto más concreto sea el mensaje, mejor podrá orientarse la primera respuesta.</p>
               <ul>
                 <li>
-                  <a href="/es/servicios/pintor" title="Consultar los trabajos de pintura disponibles">
+                  <a href="<?= url('/es/servicios/pintor') ?>" title="Consultar los trabajos de pintura disponibles">
                     <img src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Pintura interior y exterior</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/es/servicios/restaurador-muebles" title="Consultar el servicio de restauración de muebles">
+                  <a href="<?= url('/es/servicios/restaurador-muebles') ?>" title="Consultar el servicio de restauración de muebles">
                     <img src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Restauración de muebles</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/es/contacto" title="Ir a la página de contacto y presupuesto">
+                  <a href="<?= url('/es/contacto') ?>" title="Ir a la página de contacto y presupuesto">
                     <img src="<?= asset('assets/img/icons/location.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Usurbil, Donostialdea y alrededores</span>
                   </a>

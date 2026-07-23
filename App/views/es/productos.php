@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Servicios · Usurbil y entorno próximo</p>
         <h1 class="header02__title">Servicios de pintura y restauración de muebles en Usurbil</h1>
         <p class="header02__text">Dos servicios distintos y una misma forma de trabajar: escuchar lo que necesitas, revisar el punto de partida y plantear un acabado adecuado para el uso real del espacio o la pieza.</p>
-        <a href="/es/contacto" class="boton" title="Pedir presupuesto para un servicio">Consultar un trabajo</a>
+        <a href="<?= url('/es/contacto') ?>" class="boton" title="Pedir presupuesto para un servicio">Consultar un trabajo</a>
       </div>
     </header>
 
@@ -96,7 +97,7 @@
             <h2 id="servicio-pintura-es">Pintor para interiores y exteriores</h2>
             <p>Una opción para renovar paredes, techos y otras superficies pintadas en viviendas, comunidades y pequeños negocios. La preparación se adapta al estado del soporte y al acabado que quieres conseguir.</p>
             <p>Consulta el servicio si necesitas actualizar colores, reparar pequeñas imperfecciones antes de pintar o dar una imagen más cuidada a un espacio de uso diario.</p>
-            <a href="/es/servicios/pintor" class="boton" title="Conocer el servicio de pintor en detalle">Conocer el servicio de pintor</a>
+            <a href="<?= url('/es/servicios/pintor') ?>" class="boton" title="Conocer el servicio de pintor en detalle">Conocer el servicio de pintor</a>
           </div>
         </article>
 
@@ -116,7 +117,7 @@
             <h2 id="servicio-restauracion-es">Restaurador de muebles y elementos de madera</h2>
             <p>Un servicio para valorar muebles antiguos, piezas heredadas o mobiliario cotidiano afectado por el uso. Se revisan su estado, estabilidad y acabado antes de decidir cómo intervenir.</p>
             <p>La restauración busca recuperar presencia y funcionalidad sin convertir todas las piezas en algo idéntico. El carácter del mueble y el resultado que esperas forman parte de la decisión.</p>
-            <a href="/es/servicios/restaurador-muebles" class="boton" title="Conocer el servicio de restauración de muebles en detalle">Conocer la restauración</a>
+            <a href="<?= url('/es/servicios/restaurador-muebles') ?>" class="boton" title="Conocer el servicio de restauración de muebles en detalle">Conocer la restauración</a>
           </div>
         </article>
       </section>
@@ -238,7 +239,7 @@
             <h3>Describe el punto de partida y el resultado que buscas</h3>
             <p>No hace falta que conozcas la técnica o el producto adecuado. Explica si se trata de una pared, una estancia, una fachada o un mueble, cómo está ahora y qué te gustaría cambiar.</p>
             <p>Con esa información será más sencillo orientar la consulta hacia pintura, restauración o una revisión previa del encargo.</p>
-            <a href="/es/contacto" class="boton" title="Contactar con Patxi para explicar un trabajo">Explicar mi proyecto</a>
+            <a href="<?= url('/es/contacto') ?>" class="boton" title="Contactar con Patxi para explicar un trabajo">Explicar mi proyecto</a>
           </div>
           <div>
             <img

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Quién soy · Servicios por sectores en Donostialdea</p>
         <h1 class="header02__title">Patxi: trato directo para viviendas, comunidades y negocios</h1>
         <p class="header02__text">Una sola persona para escuchar lo que necesita cada espacio o mueble y orientar el trabajo de pintura o restauración de principio a fin.</p>
-        <a href="/es/contacto" class="boton" title="Hablar con Patxi sobre un proyecto">Cuéntame tu proyecto</a>
+        <a href="<?= url('/es/contacto') ?>" class="boton" title="Hablar con Patxi sobre un proyecto">Cuéntame tu proyecto</a>
       </div>
     </header>
 
@@ -115,7 +116,7 @@
             <h3>Pintura interior para pisos, locales y oficinas de Lasarte-Oria</h3>
             <p>En una vivienda, la pintura ayuda a actualizar el ambiente y adaptar el color al uso de cada estancia. En locales y oficinas también permite renovar la imagen del espacio sin perder de vista su actividad diaria.</p>
             <p>La preparación se concreta después de revisar paredes, techos y otras superficies que formen parte del encargo.</p>
-            <a href="/es/servicios/pintor" class="boton" title="Conocer el servicio de pintura para viviendas y negocios">Ver el servicio de pintura</a>
+            <a href="<?= url('/es/servicios/pintor') ?>" class="boton" title="Conocer el servicio de pintura para viviendas y negocios">Ver el servicio de pintura</a>
           </div>
           <div>
             <img
@@ -136,7 +137,7 @@
             <h3>Restauración de muebles domésticos y mobiliario comercial</h3>
             <p>Una cómoda familiar, una mesa de uso diario o una pieza integrada en un negocio pueden necesitar ajustes, reparación y revisión del acabado. La valoración parte del estado real y de la función que seguirá cumpliendo.</p>
             <p>La ficha específica explica cómo se decide el alcance sin borrar las características que dan identidad al mueble.</p>
-            <a href="/es/servicios/restaurador-muebles" class="boton" title="Conocer la restauración de muebles para hogares y negocios">Ver restauración de muebles</a>
+            <a href="<?= url('/es/servicios/restaurador-muebles') ?>" class="boton" title="Conocer la restauración de muebles para hogares y negocios">Ver restauración de muebles</a>
           </div>
           <div>
             <img

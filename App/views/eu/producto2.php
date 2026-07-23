@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Enkarguzko zerbitzua · Altzariak eta egurrezko piezak</p>
         <h1 class="header02__title">Altzarien zaharberritzea Donostialdean</h1>
         <p class="header02__text">Gorde nahi duzun pieza bat berreskuratzeko, haren erabilera hobetzeko eta esku-hartzea erabaki aurretik bereizgarri dituen ezaugarriak zaintzeko.</p>
-        <a href="/eu/kontaktua" class="boton" title="Altzari baten zaharberritzea kontsultatu">Nire altzaria kontsultatu</a>
+        <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Altzari baten zaharberritzea kontsultatu">Nire altzaria kontsultatu</a>
       </div>
     </header>
 
@@ -157,7 +158,7 @@
             <h3>3. Akabera piezak izango duen erabilerara egokitu</h3>
             <p>Azken itxura funtzioarekin batera baloratzen da. Eguneroko erabilerako altzari batek eta batez ere apaingarria den pieza batek lehentasun desberdinak izan ditzakete erresistentzian, ukimenean eta presentzia bisualean.</p>
             <p>Hasi aurretik, zuretzat zein ezaugarri diren garrantzitsuak eta altzaria bere lekura itzultzean zer aldaketa ikusi nahi duzun azaldu ahal izango duzu.</p>
-            <a href="/eu/kontaktua" class="boton" title="Altzari baten egoera Patxiri azaldu">Balorazioa eskatu</a>
+            <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Altzari baten egoera Patxiri azaldu">Balorazioa eskatu</a>
           </div>
           <div>
             <img

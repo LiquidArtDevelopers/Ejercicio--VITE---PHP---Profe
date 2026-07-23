@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Pintura profesionala · Barruak eta kanpoaldeak</p>
         <h1 class="header02__title">Etxe-margolari profesionala Usurbilen</h1>
         <p class="header02__text">Gela bat eguneratzeko, eremu komunak txukuntzeko edo kanpoko gainazalak berritzeko, haien egoerara eta bilatzen duzun akaberara egokitutako prestaketarekin.</p>
-        <a href="/eu/kontaktua" class="boton" title="Pintura-lan baterako aurrekontua eskatu">Pintura-aurrekontua eskatu</a>
+        <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Pintura-lan baterako aurrekontua eskatu">Pintura-aurrekontua eskatu</a>
       </div>
     </header>
 
@@ -157,7 +158,7 @@
             <h3>3. Multzoa berrikusi eta espazioaz berriro gozatu</h3>
             <p>Amaitzean itxura orokorra, elkarguneak eta enkarguan aurreikusitako eremuak egiaztatzen dira. Helburua da aldaketak adostutakoari erantzutea eta egunerokoan funtzionatzea.</p>
             <p>Oraindik koloreak edo lanaren irismena erabakitzen ari bazara, gela deskribatu eta formularioaren bidez lehen orientazioa eska dezakezu.</p>
-            <a href="/eu/kontaktua" class="boton" title="Pintura-proiektua Patxiri azaldu">Nire proiektua azaldu</a>
+            <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Pintura-proiektua Patxiri azaldu">Nire proiektua azaldu</a>
           </div>
           <div>
             <img

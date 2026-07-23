@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Servicio por encargo · Muebles y piezas de madera</p>
         <h1 class="header02__title">Restauración de muebles en Donostialdea</h1>
         <p class="header02__text">Para recuperar una pieza que quieres conservar, mejorar su uso y cuidar los rasgos que la hacen reconocible antes de decidir cualquier intervención.</p>
-        <a href="/es/contacto" class="boton" title="Consultar la restauración de un mueble">Consultar mi mueble</a>
+        <a href="<?= url('/es/contacto') ?>" class="boton" title="Consultar la restauración de un mueble">Consultar mi mueble</a>
       </div>
     </header>
 
@@ -157,7 +158,7 @@
             <h3>3. Ajustar el acabado al uso que tendrá la pieza</h3>
             <p>El aspecto final se valora junto con la función. Un mueble de uso diario y una pieza principalmente decorativa pueden pedir prioridades distintas en resistencia, tacto y presencia visual.</p>
             <p>Antes de comenzar, podrás explicar qué rasgos son importantes para ti y qué cambio esperas ver cuando el mueble vuelva a su espacio.</p>
-            <a href="/es/contacto" class="boton" title="Contar a Patxi el estado de un mueble">Solicitar una valoración</a>
+            <a href="<?= url('/es/contacto') ?>" class="boton" title="Contar a Patxi el estado de un mueble">Solicitar una valoración</a>
           </div>
           <div>
             <img

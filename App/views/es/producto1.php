@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Pintura profesional · Interiores y exteriores</p>
         <h1 class="header02__title">Pintor profesional en Usurbil</h1>
         <p class="header02__text">Para actualizar una estancia, poner al día zonas comunes o renovar superficies exteriores con una preparación acorde a su estado y al acabado que buscas.</p>
-        <a href="/es/contacto" class="boton" title="Pedir presupuesto para un trabajo de pintura">Pedir presupuesto de pintura</a>
+        <a href="<?= url('/es/contacto') ?>" class="boton" title="Pedir presupuesto para un trabajo de pintura">Pedir presupuesto de pintura</a>
       </div>
     </header>
 
@@ -157,7 +158,7 @@
             <h3>3. Revisar el conjunto y volver a disfrutar del espacio</h3>
             <p>Al terminar se comprueba el aspecto general, los encuentros y las zonas previstas en el encargo. El objetivo es que el cambio responda a lo acordado y funcione en el día a día.</p>
             <p>Si todavía estás decidiendo colores o el alcance del trabajo, puedes describir la estancia y pedir una primera orientación mediante el formulario.</p>
-            <a href="/es/contacto" class="boton" title="Explicar a Patxi un proyecto de pintura">Explicar mi proyecto</a>
+            <a href="<?= url('/es/contacto') ?>" class="boton" title="Explicar a Patxi un proyecto de pintura">Explicar mi proyecto</a>
           </div>
           <div>
             <img

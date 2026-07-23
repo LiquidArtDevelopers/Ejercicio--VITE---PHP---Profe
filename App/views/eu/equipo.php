@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Nor naiz · Sektorekako zerbitzuak Donostialdean</p>
         <h1 class="header02__title">Patxi: etxebizitza, komunitate eta negozioetarako tratu zuzena</h1>
         <p class="header02__text">Pertsona bakarra espazio edo altzari bakoitzak zer behar duen entzuteko eta pintura nahiz zaharberritze lana hasieratik amaierara bideratzeko.</p>
-        <a href="/eu/kontaktua" class="boton" title="Patxirekin proiektu bati buruz hitz egin">Azaldu zure proiektua</a>
+        <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Patxirekin proiektu bati buruz hitz egin">Azaldu zure proiektua</a>
       </div>
     </header>
 
@@ -115,7 +116,7 @@
             <h3>Lasarte-Oriako pisu, lokal eta bulegoetarako barruko pintura</h3>
             <p>Etxebizitza batean, pinturak giroa eguneratzen eta kolorea gela bakoitzaren erabilerara egokitzen laguntzen du. Lokal eta bulegoetan ere espazioaren irudia berritzeko balio du, eguneroko jarduera kontuan hartuta.</p>
             <p>Prestaketa hormak, sabaiak eta enkarguaren parte diren gainerako gainazalak berrikusi ondoren zehazten da.</p>
-            <a href="/eu/zerbitzuak/margolaria" class="boton" title="Etxebizitza eta negozioetarako pintura-zerbitzua ezagutu">Pintura-zerbitzua ikusi</a>
+            <a href="<?= url('/eu/zerbitzuak/margolaria') ?>" class="boton" title="Etxebizitza eta negozioetarako pintura-zerbitzua ezagutu">Pintura-zerbitzua ikusi</a>
           </div>
           <div>
             <img
@@ -136,7 +137,7 @@
             <h3>Etxeko altzarien eta merkataritza-altzarien zaharberritzea</h3>
             <p>Familiako komoda batek, eguneroko mahai batek edo negozio batean integratutako pieza batek doikuntzak, konponketa eta akaberaren berrikuspena behar izan ditzake. Balorazioa benetako egoeratik eta izango duen erabileratik abiatzen da.</p>
             <p>Fitxa espezifikoak irismena nola erabakitzen den azaltzen du, altzariari nortasuna ematen dioten ezaugarriak ezabatu gabe.</p>
-            <a href="/eu/zerbitzuak/altzarien-zaharberritzea" class="boton" title="Etxe eta negozioetarako altzari-zaharberritzea ezagutu">Altzarien zaharberritzea ikusi</a>
+            <a href="<?= url('/eu/zerbitzuak/altzarien-zaharberritzea') ?>" class="boton" title="Etxe eta negozioetarako altzari-zaharberritzea ezagutu">Altzarien zaharberritzea ikusi</a>
           </div>
           <div>
             <img

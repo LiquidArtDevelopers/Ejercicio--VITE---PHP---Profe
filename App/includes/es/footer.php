@@ -14,9 +14,9 @@
     <section class="footer01__column" aria-labelledby="footer01-legal-title-es">
       <h2 class="footer01__title" id="footer01-legal-title-es">Información legal</h2>
       <ul class="footer01__list">
-        <li><a class="footer01__link" href="/es/legal#aviso-legal" title="Leer el aviso legal">Aviso legal</a></li>
-        <li><a class="footer01__link" href="/es/legal#politica-privacidad" title="Leer la política de privacidad">Política de privacidad</a></li>
-        <li><a class="footer01__link" href="/es/legal#gestion-cookies" title="Consultar la información sobre cookies">Gestión de cookies</a></li>
+        <li><a class="footer01__link" href="<?= url('/es/legal#aviso-legal') ?>" title="Leer el aviso legal">Aviso legal</a></li>
+        <li><a class="footer01__link" href="<?= url('/es/legal#politica-privacidad') ?>" title="Leer la política de privacidad">Política de privacidad</a></li>
+        <li><a class="footer01__link" href="<?= url('/es/legal#gestion-cookies') ?>" title="Consultar la información sobre cookies">Gestión de cookies</a></li>
       </ul>
     </section>
 
@@ -27,7 +27,7 @@
           <img class="footer01__icon" src="<?= asset('assets/img/icons/pin.svg') ?>" alt="" title="" aria-hidden="true">
           <span>Usurbil, Donostialdea y localidades próximas</span>
         </p>
-        <a class="footer01__link" href="/es/contacto" title="Pedir un presupuesto de pintura o restauración">
+        <a class="footer01__link" href="<?= url('/es/contacto') ?>" title="Pedir un presupuesto de pintura o restauración">
           <img class="footer01__icon" src="<?= asset('assets/img/icons/mail.svg') ?>" alt="" title="" aria-hidden="true">
           <span>Pedir presupuesto</span>
         </a>

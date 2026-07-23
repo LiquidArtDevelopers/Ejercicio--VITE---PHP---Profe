@@ -1,6 +1,6 @@
 <nav class="nav01" aria-label="Navegación principal" data-nav01>
   <div class="nav01__inner">
-    <a class="nav01__brand" href="/es" title="Ir al inicio de Patxi">
+    <a class="nav01__brand" href="<?= url('/es') ?>" title="Ir al inicio de Patxi">
       <span class="nav01__logo" aria-hidden="true">P</span>
       <span class="nav01__brandText">Patxi</span>
     </a>
@@ -19,8 +19,8 @@
         ?>
 
         <div class="nav01__langs" aria-label="Idiomas">
-          <a class="nav01__lang is-active" href="<?= e(ruta_homologa($url ?? null, 'es')) ?>" lang="es" hreflang="es" aria-current="true" title="Ver esta página en castellano">ES</a>
-          <a class="nav01__lang" href="<?= e(ruta_homologa($url ?? null, 'eu')) ?>" lang="eu" hreflang="eu" title="Ikusi orri hau euskaraz">EU</a>
+          <a class="nav01__lang is-active" href="<?= url(ruta_homologa($url ?? null, 'es')) ?>" lang="es" hreflang="es" aria-current="true" title="Ver esta página en castellano">ES</a>
+          <a class="nav01__lang" href="<?= url(ruta_homologa($url ?? null, 'eu')) ?>" lang="eu" hreflang="eu" title="Ikusi orri hau euskaraz">EU</a>
         </div>
       </div>
     </div>

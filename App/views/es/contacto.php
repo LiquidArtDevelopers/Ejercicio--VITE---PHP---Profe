@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -174,7 +175,7 @@
                 <div class="boton" id="boton_modal_envio" role="button" tabindex="0">Escribir otra consulta</div>
               </div>
 
-              <form id="idForAjax" action="/app/artForm02" method="post" aria-label="Formulario para pedir presupuesto">
+              <form id="idForAjax" action="<?= e(app_url('/app/artForm02')) ?>" method="post" aria-label="Formulario para pedir presupuesto">
                 <p class="error" id="errorForm02" aria-live="assertive"></p>
 
                 <label for="nombreAjax">Nombre *</label>
@@ -190,7 +191,7 @@
                 <textarea name="mensaje" id="mensajeAjax" placeholder="Describe el espacio o el mueble, su estado y la zona" minlength="4" maxlength="200" required></textarea>
 
                 <div class="horizontal">
-                  <label for="terminosAjax">Acepto la <a href="/es/legal#politica-privacidad" title="Leer la política de privacidad">política de privacidad</a> *</label>
+                  <label for="terminosAjax">Acepto la <a href="<?= url('/es/legal#politica-privacidad') ?>" title="Leer la política de privacidad">política de privacidad</a> *</label>
                   <input type="checkbox" name="terminos" id="terminosAjax" required>
                 </div>
 
@@ -222,19 +223,19 @@
               <p>Si quieres ampliar información sobre aplicaciones y proceso, revisa la ficha del servicio correspondiente. Después vuelve al formulario y resume los datos esenciales de tu caso.</p>
               <ul>
                 <li>
-                  <a href="/es/servicios/pintor" title="Leer la información del servicio de pintor">
+                  <a href="<?= url('/es/servicios/pintor') ?>" title="Leer la información del servicio de pintor">
                     <img src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Servicio de pintor</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/es/servicios/restaurador-muebles" title="Leer la información sobre restauración de muebles">
+                  <a href="<?= url('/es/servicios/restaurador-muebles') ?>" title="Leer la información sobre restauración de muebles">
                     <img src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Restauración de muebles</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/es/quienes-somos" title="Conocer la forma de trabajar de Patxi">
+                  <a href="<?= url('/es/quienes-somos') ?>" title="Conocer la forma de trabajar de Patxi">
                     <img src="<?= asset('assets/img/icons/person.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Conoce a Patxi</span>
                   </a>

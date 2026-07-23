@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header01__eyebrow">Pintura eta zaharberritzea · Usurbil eta Donostialdea</p>
         <h1>Patxi, Donostialdeko margolaria eta altzari-zaharberritzailea</h1>
         <p class="header01__text">Berritu etxebizitza, komunitate edo negozio txiki bat, edo berreskuratu gordetzen jarraitu nahi duzun altzaria. Tratu zuzena eta enkargu bakoitzak benetan behar duenaren arabera planteatutako lana.</p>
-        <a href="/eu/kontaktua" class="boton" title="Patxiri aurrekontua eskatu">Aurrekontua eskatu</a>
+        <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Patxiri aurrekontua eskatu">Aurrekontua eskatu</a>
       </div>
     </header>
 
@@ -96,7 +97,7 @@
             <h3>Barrualdeko eta kanpoaldeko pintura-lanak</h3>
             <p>Etxebizitzak, atariak, eremu komunak eta lokal txikiak margotzeko zerbitzua. Akabera aplikatu aurretik, euskarria eta behar duen prestaketa baloratzen dira, gainazal uniformea lortzeko.</p>
             <p>Gela baten giroa aldatu, higiezin bat eguneratu edo akats txikiak dituzten hormak txukundu nahi badituzu, margolari-zerbitzua kontsulta dezakezu eta buruan duzun emaitza azaldu.</p>
-            <a href="/eu/zerbitzuak/margolaria" class="boton" title="Etxe-margolari profesionalaren zerbitzua ikusi">Pintura-zerbitzua ikusi</a>
+            <a href="<?= url('/eu/zerbitzuak/margolaria') ?>" class="boton" title="Etxe-margolari profesionalaren zerbitzua ikusi">Pintura-zerbitzua ikusi</a>
           </div>
         </article>
 
@@ -116,7 +117,7 @@
             <h3>Altzarien eta egurrezko piezen zaharberritzea</h3>
             <p>Bigarren bizitza merezi duten altzari zaharrak edo eguneroko erabilerakoak berreskuratzea. Lana higadura, egonkortasuna, aurreko akabera eta piezak izango duen erabilera aztertu ondoren erabakitzen da.</p>
             <p>Helburua ez da haren historia ezabatzea, baizik eta itxura eta erabilgarritasuna hobetzea, altzariaren izaera errespetatuz eta bilatzen duzun emaitza zurekin adostuz.</p>
-            <a href="/eu/zerbitzuak/altzarien-zaharberritzea" class="boton" title="Altzariak zaharberritzeko zerbitzua ikusi">Zaharberritzea ikusi</a>
+            <a href="<?= url('/eu/zerbitzuak/altzarien-zaharberritzea') ?>" class="boton" title="Altzariak zaharberritzeko zerbitzua ikusi">Zaharberritzea ikusi</a>
           </div>
         </article>
       </section>
@@ -158,7 +159,7 @@
                 <div class="boton" id="boton_modal_envio" role="button" tabindex="0">Beste kontsulta bat idatzi</div>
               </div>
 
-              <form id="idForAjax" action="/app/artForm02" method="post" aria-label="Aurrekontua eskatzeko formularioa">
+              <form id="idForAjax" action="<?= e(app_url('/app/artForm02')) ?>" method="post" aria-label="Aurrekontua eskatzeko formularioa">
                 <p class="error" id="errorForm02" aria-live="assertive"></p>
 
                 <label for="nombreAjax">Izena *</label>
@@ -174,7 +175,7 @@
                 <textarea name="mensaje" id="mensajeAjax" placeholder="Azaldu espazioa edo altzaria, haren egoera eta kokapena" minlength="4" maxlength="200" required></textarea>
 
                 <div class="horizontal">
-                  <label for="terminosAjax"><a href="/eu/lege-oharra#politica-privacidad" title="Pribatutasun-politika irakurri">Pribatutasun-politika</a> onartzen dut *</label>
+                  <label for="terminosAjax"><a href="<?= url('/eu/lege-oharra#politica-privacidad') ?>" title="Pribatutasun-politika irakurri">Pribatutasun-politika</a> onartzen dut *</label>
                   <input type="checkbox" name="terminos" id="terminosAjax" required>
                 </div>
 
@@ -206,19 +207,19 @@
               <p>Adierazi pintura edo zaharberritzea den, lana non dagoen eta zer aldaketa lortu nahi duzun. Mezua zenbat eta zehatzagoa izan, orduan eta hobeto bideratu ahal izango da lehen erantzuna.</p>
               <ul>
                 <li>
-                  <a href="/eu/zerbitzuak/margolaria" title="Eskuragarri dauden pintura-lanak kontsultatu">
+                  <a href="<?= url('/eu/zerbitzuak/margolaria') ?>" title="Eskuragarri dauden pintura-lanak kontsultatu">
                     <img src="<?= asset('assets/img/icons/brush-1.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Barrualdeko eta kanpoaldeko pintura</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/eu/zerbitzuak/altzarien-zaharberritzea" title="Altzariak zaharberritzeko zerbitzua kontsultatu">
+                  <a href="<?= url('/eu/zerbitzuak/altzarien-zaharberritzea') ?>" title="Altzariak zaharberritzeko zerbitzua kontsultatu">
                     <img src="<?= asset('assets/img/icons/mueble.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Altzarien zaharberritzea</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/eu/kontaktua" title="Kontaktu eta aurrekontu orrira joan">
+                  <a href="<?= url('/eu/kontaktua') ?>" title="Kontaktu eta aurrekontu orrira joan">
                     <img src="<?= asset('assets/img/icons/location.svg') ?>" alt="" title="" aria-hidden="true">
                     <span>Usurbil, Donostialdea eta inguruak</span>
                   </a>

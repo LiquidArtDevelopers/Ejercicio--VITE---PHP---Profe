@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/eu/nav.php'); ?>
@@ -45,7 +46,7 @@
         <p class="header02__eyebrow">Zerbitzuak · Usurbil eta inguruko herriak</p>
         <h1 class="header02__title">Pintura eta altzari-zaharberritze zerbitzuak Usurbilen</h1>
         <p class="header02__text">Bi zerbitzu desberdin eta lan egiteko modu bera: behar duzuna entzun, abiapuntua aztertu eta espazioaren edo piezaren benetako erabilerarako akabera egokia proposatu.</p>
-        <a href="/eu/kontaktua" class="boton" title="Zerbitzu baterako aurrekontua eskatu">Lan bat kontsultatu</a>
+        <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Zerbitzu baterako aurrekontua eskatu">Lan bat kontsultatu</a>
       </div>
     </header>
 
@@ -96,7 +97,7 @@
             <h2 id="servicio-pintura-eu">Barrualde eta kanpoaldeetarako margolaria</h2>
             <p>Etxebizitzetako, komunitateetako eta negozio txikietako hormak, sabaiak eta margotutako beste gainazal batzuk berritzeko aukera. Prestaketa euskarriaren egoerara eta lortu nahi duzun akaberara egokitzen da.</p>
             <p>Kontsultatu zerbitzua koloreak eguneratu, margotu aurretik akats txikiak konpondu edo eguneroko erabilerako espazio bati itxura zainduagoa eman behar badiozu.</p>
-            <a href="/eu/zerbitzuak/margolaria" class="boton" title="Margolari-zerbitzua xehetasunez ezagutu">Margolari-zerbitzua ezagutu</a>
+            <a href="<?= url('/eu/zerbitzuak/margolaria') ?>" class="boton" title="Margolari-zerbitzua xehetasunez ezagutu">Margolari-zerbitzua ezagutu</a>
           </div>
         </article>
 
@@ -116,7 +117,7 @@
             <h2 id="servicio-restauracion-eu">Altzarien eta egurrezko elementuen zaharberritzailea</h2>
             <p>Altzari zaharrak, oinordetzan jasotako piezak edo erabilerak kaltetutako eguneroko altzariak baloratzeko zerbitzua. Esku-hartzea erabaki aurretik egoera, egonkortasuna eta akabera aztertzen dira.</p>
             <p>Zaharberritzeak presentzia eta erabilgarritasuna berreskuratu nahi ditu, pieza guztiak berdin bihurtu gabe. Altzariaren izaerak eta zuk espero duzun emaitzak erabakian parte hartzen dute.</p>
-            <a href="/eu/zerbitzuak/altzarien-zaharberritzea" class="boton" title="Altzarien zaharberritzea xehetasunez ezagutu">Zaharberritzea ezagutu</a>
+            <a href="<?= url('/eu/zerbitzuak/altzarien-zaharberritzea') ?>" class="boton" title="Altzarien zaharberritzea xehetasunez ezagutu">Zaharberritzea ezagutu</a>
           </div>
         </article>
       </section>
@@ -238,7 +239,7 @@
             <h3>Azaldu abiapuntua eta bilatzen duzun emaitza</h3>
             <p>Ez duzu teknika edo produktu egokia ezagutu behar. Azaldu horma, gela, fatxada edo altzaria den, nola dagoen orain eta zer aldatu nahi duzun.</p>
             <p>Informazio horrekin errazagoa izango da kontsulta pinturara, zaharberritzera edo enkarguaren aurretiazko berrikuspenera bideratzea.</p>
-            <a href="/eu/kontaktua" class="boton" title="Patxirekin harremanetan jarri lana azaltzeko">Nire proiektua azaldu</a>
+            <a href="<?= url('/eu/kontaktua') ?>" class="boton" title="Patxirekin harremanetan jarri lana azaltzeko">Nire proiektua azaldu</a>
           </div>
           <div>
             <img

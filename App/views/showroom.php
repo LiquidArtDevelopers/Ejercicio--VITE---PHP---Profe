@@ -9,6 +9,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= vite_tags($route['resources'] ?? null) ?>
+    <?php require app_path('includes/cookielad.php'); ?>
   </head>
   <body>
     <?php require app_path('includes/es/nav.php'); ?>
@@ -191,15 +192,15 @@
                 </div>
 
                 <div class="imagenes">
-                    <a href="<?= route_url('/productos') ?>" title="Matrix ipsum">
+                    <a href="<?= url('/productos') ?>" title="Matrix ipsum">
                         <img src="<?= asset('assets/img/test/dummy01.avif') ?>" alt="Escena de Matrix" title="Matrix ipsum">
                         <h4>Matrix ipsum 01</h4>
                     </a>
-                    <a href="<?= route_url('/productos') ?>" title="Matrix ipsum">
+                    <a href="<?= url('/productos') ?>" title="Matrix ipsum">
                         <img src="<?= asset('assets/img/test/dummy02.avif') ?>" alt="Escena de Matrix" title="Matrix ipsum">
                         <h4>Matrix ipsum 02</h4>
                     </a>
-                    <a href="<?= route_url('/productos') ?>" title="Matrix ipsum">
+                    <a href="<?= url('/productos') ?>" title="Matrix ipsum">
                         <img src="<?= asset('assets/img/test/dummy04.avif') ?>" alt="Escena de Matrix" title="Matrix ipsum">
                         <h4>Matrix ipsum 03</h4>
                     </a>
@@ -592,7 +593,7 @@
                         <div class="boton" id="boton_modal_envio">Escribir otra consulta</div>
                     </div>
 
-                    <form id="idForAjax" action="/app/artForm02" method="post">
+                    <form id="idForAjax" action="<?= e(app_url('/app/artForm02')) ?>" method="post">
                         
                         <p class="error" id="errorForm02"></p>
 
